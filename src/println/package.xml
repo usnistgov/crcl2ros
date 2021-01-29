@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="2">
+   <name>println</name>
+   <version>0.0.0</version>
+   <description>Print roslaunch message utility</description>
+   <maintainer email="john.michaloski@nist.gov" />
+   <license>TODO</license>
+   <buildtool_depend>catkin</buildtool_depend>
+
+
+   <depend>roscpp</depend>
+   <depend>rospy</depend>
+</package>

@@ -1,0 +1,402 @@
+BUID & RUN
+
+2053  catkin build -DCMAKE_BUILD_TYPE=Debug
+2054  roslaunch fanuc_lrmate200id_support  top.launch
+
+
+ROS_DEBUG_STREAM_NAMED("roscrclstatus_only", "ros status cmdid="<<rcs_robot.crclcommandid );
+ROS_DEBUG_STREAM_NAMED("roscrclstatus_only", "ros status cmd status="<<rcs_robot.crclcommandstatus);
+
+
+Tue Jan 26 16:49:13 EST 2021
+Thread CRosCrclClient waiting to finish
+
+RCS> Free slot kit=sku_kit_m2l1_vessel14 slot=slot1 Gear=sku_part_medium_gear17 at   0.23,  -1.20,   0.92,-0.011,-0.003,0.022,1.000
+World Gear Coord=   0.23,  -1.20,   0.92,-0.011,-0.003,0.022,1.000
+Robot base    Coord=  -0.17,  -1.14,   0.93,0.000,0.000,0.000,1.000
+Robot baseinv Coord=   0.17,   1.14,  -0.93,0.000,0.000,0.000,1.000
+Robot Gear Coord   =   0.40,  -0.06,  -0.01,-0.011,-0.003,0.022,1.000
+Robot Retract Coord=   0.38,  -0.06,  -0.01,0.000,0.707,0.000,0.707
+
+Locals
+        cmd	@0x7ffd3d164e00	RCS::CCanonCmd
+                [crcl_rosmsgs::CrclCommandMsg]	@0x7ffd3d164e00	crcl_rosmsgs::CrclCommandMsg
+                _CommandID	5	unsigned long long
+                _ConfigMax	<0 items>	std::vector<double, std::allocator<double> >
+                _ConfigMin	<0 items>	std::vector<double, std::allocator<double> >
+                _CrclCommandID	103105859072	unsigned long long
+                _Rates	@0x7ffd3d164fe0	RCS::IRate
+                _StatusID	26644000	unsigned long long
+                absJointAcc	0.0	double
+                absJointSpeed	0.0	double
+                absRotAcc	0.0	double
+                absRotSpeed	0.0	double
+                absTransAcc	0.0	double
+                absTransSpeed	0.7071067811865476	double
+                accprofile	1072079006	int
+                endPoseTol	@0x7ffd3d165158	RCS::PoseTolerance
+                gripperControlAlgorithm	0	int
+                gripperControlType	<0 items>	std::vector<int, std::allocator<int> >
+                gripperMoves	<0 items>	std::vector<sensor_msgs::JointState_<std::allocator<void> >, std::allocator<sensor_msgs::JointState_<std::allocator<void> > > >
+                gripperTol	@0x7ffd3d165188	RCS::PoseTolerance
+                intermediatePtTol	@0x7ffd3d165170	RCS::PoseTolerance
+                nextGripperGoalJoints	@0x7ffd3d1651b8	sensor_msgs::JointState
+                parameterNames	<0 items>	std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >
+                parameterValues	<0 items>	std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >
+                robotControlAlgorithm	26643968	int
+                speed	<0 items>	std::vector<double, std::allocator<double> >
+                status	0	int
+                stoptype	1719614412	int
+                type	0	int
+        pose	@0x7ffd3d165d90	tf::Pose
+                m_basis	@0x7ffd3d165d90	tf::Matrix3x3
+                m_origin	@0x7ffd3d165df0	tf::Vector3
+                        m_floats	@0x7ffd3d165df0	tfScalar[4]
+                                [0]	-0.014345676887287384	tfScalar
+                                [1]	-0.05661563748278442	tfScalar
+ =========>                     [2]	-0.34342149190044163	tfScalar
+                                [3]	0.0	tfScalar
+        this	@0x137dc20	crcl::CCrcl2RosMsgApi
+
+
+
+
+
+[ WARN] [1610059496.708868256]: The computed trajectory is too short to detect jumps in joint-space Need at least 10 steps, only got 5. Try a lower max_step.
+double jump_threshold = 0.1; // zero means ignore since KDL
+
+
+
+Pose =    0.47,   0.00,   0.70,0.000,0.000,0.000,1.000
+Jnts =  0.00, 0.00, 0.00, 0.00, 0.00, 0.00
+
+Pose =    0.45,  -0.01,   0.58,-0.000,0.195,0.000,0.981
+Jnts = -0.04,-0.02,-0.28,-0.26,-0.14, 0.27
+
+
+Current pose   0.47,   0.00,   0.70,0.000,0.000,0.000,1.000
+Goal pose   0.40,  -0.06,   0.09,0.000,0.707,0.000,0.707
+
+
+[ERROR] [1609977743.851298159, 30.454000000]: Failed to build tree:
+parent link [world] of joint [fanuc_base_link-base]
+not found.  This is not valid according to the URDF spec.
+Every link you refer to from a joint needs to be explicitly defined in the robot description. To fix this problem you can either remove this joint [fanuc_base_link-base] from your urdf file, or add "<link name="world" />" to your urdf file.
+
+rosrun tf view_frames
+
+ros::service::waitForService("/gazebo/?????", -1)); //-1 infinite wait
+gz topic -l
+
+
+
+[DEBUG] [1609956516.035722576, 33.494000000]: URDF Robot fanuc_lrmate200id
+[DEBUG] [1609956516.035843444, 33.494000000]: base link= fanuc_base_link
+[DEBUG] [1609956516.035904551, 33.494000000]: ee link= fanuc_link_6
+[DEBUG] [1609956516.035968654, 33.494000000]: num joints= 6
+[DEBUG] [1609956516.036196597, 33.494000000]: baseoffset=   -0.17,  -1.14,   0.93,0.000,0.000,0.000,1.000
+[DEBUG] [1609956516.036312170, 33.494000000]: tooloffset=    0.00,   0.00,   0.18,0.000,0.000,0.000,1.000
+[DEBUG] [1609956516.036409248, 33.494000000]: qbend= [X=  0.0000,Y=  0.7071,Z=  0.0000,W=  0.7071]
+[DEBUG] [1609956516.036463366, 33.494000000]: Joint names= fanuc_joint_1,fanuc_joint_2,fanuc_joint_3,fanuc_joint_4,fanuc_joint_5,fanuc_joint_6
+[DEBUG] [1609956516.036507295, 33.494000000]: Robot World Coordinates= 0
+[DEBUG] [1609956516.065794502, 33.508000000]:  crcl robot= fanuc_lrmate200id
+[DEBUG] [1609956516.066037503, 33.508000000]:  crcl Ip= 127.0.0.1
+[DEBUG] [1609956516.066587244, 33.509000000]:  crcl Port= 64444
+[DEBUG] [1609956516.066813174, 33.509000000]:  crcl Debug general= 1
+[DEBUG] [1609956516.067053272, 33.509000000]:  crcl Debug bAutoCrclStatus= 1
+[DEBUG] [1609956516.067260148, 33.509000000]:  crcl bDebugCrclStatusMsg= 0
+[DEBUG] [1609956516.067470149, 33.509000000]:  crcl bDebugCrclCommandMsg= 0
+[DEBUG] [1609956516.067817561, 33.510000000]:  crcl bCrclStopIgnore= 1
+[DEBUG] [1609956516.068029522, 33.510000000]:  crcl bDebugCrclXML in socket server= 0
+[DEBUG] [1609956516.068280531, 33.510000000]:  crcl bFlywheel= 0
+[DEBUG] [1609956516.068490524, 33.510000000]:  crcl bProcessAllCrclMessages= 0
+[DEBUG] [1609956516.068703047, 33.510000000]:  crcl socket reader Ip=127.0.0.1 Port=64444
+
+
+Wed 06 Jan 2021 11:20:52 AM EST
+Removed code from globals:
+/** \def TOOLS_DEPRECATED
+    Macro that marks functions as deprecated -from ROS */
+
+#ifdef __GNUC__
+#define TOOLS_DEPRECATED __attribute__((deprecated))
+#elif defined(_MSC_VER)
+#define TOOLS_DEPRECATED __declspec(deprecated)
+#elif defined(__clang__)
+#define TOOLS_DEPRECATED __attribute__((deprecated("Use of this method is deprecated")))
+#else
+#define TOOLS_DEPRECATED /* Nothing */
+#endif
+
+
+#if defined DEBUG
+#define IfDebug(arg)    arg
+#else
+#define IfDebug(arg)
+#endif
+
+// Adapter from  IKFAST
+#ifndef NC_ASSERT
+#include <stdexcept>
+#include <sstream>
+#include <iostream>
+#ifndef __PRETTY_FUNCTION__
+#define __PRETTY_FUNCTION__ __func__
+#endif
+#define NC_ASSERT(b) { if( !(b) ) { std::stringstream ss; ss << "nc exception: " << __FILE__ << ":" << __LINE__ << ": " <<__PRETTY_FUNCTION__ << ": Assertion '" << #b << "' failed"; throw std::runtime_error(ss.str()); } }
+#endif
+//#if  ! defined S_OK
+//#define strncasecmp(x, y, z)    _strnicmp(x, y, z)
+//#else
+//#define _strnicmp strncasecmp
+//#define S_OK 0
+//#define E_FAIL -1
+//#endif
+
+
+
+#ifndef CLEANSTORE
+#define CLEANSTORE(Y, X, Z) \
+    try{ Y = X; }           \
+    catch ( ... ) { Y = Z; }
+#define VALIDSTORE(Y, X) \
+    try{ Y = X; }        \
+    catch ( ... ) { }
+#endif
+
+
+
+
+
+$ stty sane
+$ tput rs1
+$ reset
+
+Tue 05 Jan 2021 06:05:39 PM EST
+[DEBUG] [1609887895.524219013, 43.362000000]: URDF Robot fanuc_lrmate200id
+[DEBUG] [1609887895.524298149, 43.362000000]: base link= fanuc_base_link
+[DEBUG] [1609887895.524342908, 43.362000000]: ee link= fanuc_link_6
+[DEBUG] [1609887895.524397406, 43.362000000]: num joints= 6
+[DEBUG] [1609887895.524584587, 43.362000000]: baseoffset=   -0.17,  -1.14,   0.93,0.000,0.000,0.000,1.000
+[DEBUG] [1609887895.524697287, 43.362000000]: tooloffset=    0.00,   0.00,   0.18,0.000,0.000,0.000,1.000
+[DEBUG] [1609887895.524783109, 43.362000000]: qbend= [X=  1.0000,Y=  0.0000,Z=  0.0000,W=  0.0000]
+[DEBUG] [1609887895.524837580, 43.362000000]: Joint names= fanuc_joint_1,fanuc_joint_2,fanuc_joint_3,fanuc_joint_4,fanuc_joint_5,fanuc_joint_6
+[DEBUG] [1609887895.545188400, 43.372000000]:  crcl robot= fanuc_lrmate200id
+[DEBUG] [1609887895.545266264, 43.372000000]:  crcl Ip= 127.0.0.1
+[DEBUG] [1609887895.545311417, 43.372000000]:  crcl Port= 64444
+[DEBUG] [1609887895.545354139, 43.372000000]:  crcl Debug general= 1
+[DEBUG] [1609887895.545394106, 43.372000000]:  crcl Debug bAutoCrclStatus= 1
+[DEBUG] [1609887895.545434142, 43.372000000]:  crcl bDebugCrclStatusMsg= 0
+[DEBUG] [1609887895.545472356, 43.372000000]:  crcl bDebugCrclCommandMsg= 0
+[DEBUG] [1609887895.545513248, 43.372000000]:  crcl bCrclStopIgnore= 1
+[DEBUG] [1609887895.545549486, 43.372000000]:  crcl bDebugCrclXML in socket server= 0
+[DEBUG] [1609887895.545588491, 43.372000000]:  crcl bFlywheel= 0
+[DEBUG] [1609887895.545627326, 43.372000000]:  crcl bProcessAllCrclMessages= 0
+[DEBUG] [1609887895.545666696, 43.372000000]:  crcl socket reader Ip=127.0.0.1 Port=64444
+[ INFO] [1609887895.550951587, 43.376000000]: Loading robot model 'fanuc_lrmate200id'...
+[ WARN] [1609887895.551054661, 43.376000000]: Skipping virtual joint 'fanuc_base_link-base' because its child frame 'fanuc_base_link' does not match the URDF frame 'world'
+[ INFO] [1609887895.551110896, 43.376000000]: No root/virtual joint specified in SRDF. Assuming fixed joint
+[ INFO] [1609887895.977383248, 43.670000000]: Loading robot model 'fanuc_lrmate200id'...
+[ WARN] [1609887895.977475567, 43.670000000]: Skipping virtual joint 'fanuc_base_link-base' because its child frame 'fanuc_base_link' does not match the URDF frame 'world'
+[ INFO] [1609887895.977758745, 43.670000000]: No root/virtual joint specified in SRDF. Assuming fixed joint
+Server started, waiting on port 64444
+
+
+/**
+ * @brief The timer struct
+ *  while( gripper.state() != 0 && t.seconds_elapsed() > 1 )
+        { ::sleep(50) ; }
+
+    if(gripper.state() == 0)
+        return error;
+ */
+
+//http://www.cplusplus.com/forum/beginner/91449/
+struct timer
+{
+    typedef std::chrono::steady_clock clock ;
+    typedef std::chrono::seconds seconds ;
+
+    timer(TPollFcn fcn) : savefcn(fcn)
+    {
+    }
+
+    int poll(int equality)
+    {
+        while( savefcn() != equality && seconds_elapsed() > 1 )
+        {
+            ::sleep(50) ;
+        }
+
+        if(savefcn() == equality)
+            return 0;
+
+        return 1;
+
+    }
+
+    void reset()
+    {
+        start = clock::now() ;
+    }
+
+    unsigned long long seconds_elapsed() const
+    { return std::chrono::duration_cast<seconds>( clock::now() - start ).count() ; }
+
+    private: clock::time_point start = clock::now() ;
+    TPollFcn savefcn;
+};
+
+
+
+
+sku_large_gear_vessel1 at    0.31,   0.60,  -0.21,0.000,0.000,0.021,1.000|height=0
+sku_large_gear_vessel2 at   -0.18,   0.43,  -0.21,0.000,0.000,0.021,1.000|height=0
+sku_kit_s2l2_vessel3 at    0.32,   0.44,  -0.21,0.000,0.000,0.021,1.000|height=0
+sku_part_large_gear6 at    0.25,   0.60,  -0.19,0.001,-0.000,0.001,1.000|height=0
+sku_part_large_gear7 at   -0.12,   0.43,  -0.19,0.001,0.000,0.001,1.000|height=0
+sku_part_large_gear8 at   -0.23,   0.43,  -0.19,-0.000,0.000,0.002,1.000|height=0
+sku_small_gear_vessel9 at    0.12,   0.59,  -0.21,0.000,0.000,0.023,1.000|height=0
+sku_part_small_gear10 at    0.15,   0.56,  -0.19,-0.014,0.006,0.031,0.999|height=0
+sku_part_large_gear5 at    0.36,   0.60,  -0.19,-0.000,-0.000,0.003,1.000|height=0
+sku_part_small_gear12 at    0.09,   0.62,  -0.19,0.001,0.001,0.007,1.000|height=0
+sku_part_small_gear13 at    0.08,   0.55,  -0.19,-0.029,0.021,0.024,0.999|height=0
+sku_kit_m2l1_vessel14 at    0.57,   0.09,  -0.20,0.000,0.000,-0.720,0.694|height=0
+sku_part_small_gear11 at    0.15,   0.62,  -0.19,-0.006,-0.017,0.001,1.000|height=0
+sku_kit_s2l2_vessel4 at    0.07,   0.43,  -0.21,0.000,0.000,0.021,1.000|height=0
+sku_kit_m2l1_vessel15 at    0.35,   0.09,  -0.20,0.000,0.000,-0.720,0.694|height=0
+sku_medium_gear_vessel16 at    0.36,  -0.10,  -0.19,0.000,0.000,0.017,1.000|height=0
+sku_part_medium_gear17 at    0.40,  -0.06,  -0.19,-0.011,-0.003,0.022,1.000|height=0
+sku_part_medium_gear18 at    0.32,  -0.06,  -0.19,-0.001,-0.001,0.017,1.000|height=0
+sku_part_medium_gear19 at    0.32,  -0.14,  -0.19,0.001,-0.003,0.018,1.000|height=0
+sku_part_medium_gear20 at    0.40,  -0.14,  -0.19,-0.002,0.001,0.012,1.000|height=0
+sku_large_gear_vessel21 at    0.56,  -0.12,  -0.20,0.000,0.000,0.721,0.693|height=0
+sku_part_large_gear22 at    0.56,  -0.07,  -0.19,0.002,-0.002,0.016,1.000|height=0
+sku_part_large_gear23 at    0.56,  -0.18,  -0.19,-0.002,-0.001,0.188,0.982|height=0
+
+
+
+RCS> inferences
+RCS> sku_kit_m2l1_vessel14 at    0.40,  -1.05,   0.92,0.000,0.000,-0.720,0.694
+        slot1 sku_part_medium_gear open ( 0.45559 -1.00712  0.91599)
+        slot2 sku_part_medium_gear open ( 0.45263 -1.08706  0.91599)
+        slot3 sku_part_large_gear open ( 0.35917 -1.04358  0.91599)
+sku_kit_m2l1_vessel15 at    0.18,  -1.05,   0.92,0.000,0.000,-0.720,0.694
+        slot1 sku_part_medium_gear open ( 0.23969 -1.01508  0.91599)
+        slot2 sku_part_medium_gear open ( 0.23674 -1.09502  0.91599)
+        slot3 sku_part_large_gear open ( 0.14328 -1.05154  0.91599)
+sku_medium_gear_vessel16 at    0.19,  -1.24,   0.92,0.000,0.000,0.017,1.000
+        slot1 sku_part_medium_gear sku_part_medium_gear17 ( 0.22842 -1.19713  0.92317)
+        slot2 sku_part_medium_gear sku_part_medium_gear18 ( 0.14927 -1.19981  0.92317)
+        slot3 sku_part_medium_gear sku_part_medium_gear20 ( 0.23110 -1.27629  0.92317)
+        slot4 sku_part_medium_gear sku_part_medium_gear19 ( 0.15195 -1.27897  0.92317)
+sku_part_medium_gear17 at    0.23,  -1.20,   0.92,-0.011,-0.003,0.022,1.000
+        In: sku_medium_gear_vessel16(slot1)
+sku_part_medium_gear18 at    0.15,  -1.20,   0.92,-0.001,-0.001,0.017,1.000
+        In: sku_medium_gear_vessel16(slot2)
+sku_part_medium_gear19 at    0.15,  -1.28,   0.92,0.001,-0.003,0.018,1.000
+        In: sku_medium_gear_vessel16(slot4)
+sku_part_medium_gear20 at    0.23,  -1.28,   0.92,-0.002,0.001,0.012,1.000
+        In: sku_medium_gear_vessel16(slot3)
+sku_large_gear_vessel21 at    0.39,  -1.26,   0.92,0.000,0.000,0.721,0.693
+        slot1 sku_part_large_gear sku_part_large_gear23 ( 0.39442 -1.31785  0.91521)
+        slot2 sku_part_large_gear sku_part_large_gear22 ( 0.38994 -1.20795  0.91521)
+sku_part_large_gear22 at    0.39,  -1.21,   0.92,0.002,-0.002,0.016,1.000
+        In: sku_large_gear_vessel21(slot2)
+sku_part_large_gear23 at    0.39,  -1.32,   0.92,-0.002,-0.001,0.188,0.982
+        In: sku_large_gear_vessel21(slot1)
+
+
+RCS> sku_kit_m2l1_vessel14 at    0.40,  -1.05,   0.92,0.000,0.000,-0.720,0.694
+        slot1 sku_part_medium_gear sku_part_medium_gear17 ( 0.45559 -1.00712  0.91599)
+        slot2 sku_part_medium_gear open ( 0.45263 -1.08706  0.91599)
+        slot3 sku_part_large_gear open ( 0.35917 -1.04358  0.91599)
+sku_kit_m2l1_vessel15 at    0.18,  -1.05,   0.92,0.000,0.000,-0.720,0.694
+        slot1 sku_part_medium_gear open ( 0.23969 -1.01508  0.91599)
+        slot2 sku_part_medium_gear open ( 0.23674 -1.09502  0.91599)
+        slot3 sku_part_large_gear open ( 0.14328 -1.05154  0.91599)
+sku_medium_gear_vessel16 at    0.19,  -1.24,   0.92,0.000,0.000,0.017,1.000
+        slot1 sku_part_medium_gear open ( 0.22842 -1.19713  0.92317)
+        slot2 sku_part_medium_gear sku_part_medium_gear18 ( 0.14927 -1.19981  0.92317)
+        slot3 sku_part_medium_gear sku_part_medium_gear20 ( 0.23110 -1.27629  0.92317)
+        slot4 sku_part_medium_gear sku_part_medium_gear19 ( 0.15195 -1.27897  0.92317)
+sku_part_medium_gear17 at    0.46,  -1.01,   0.92,-0.048,-0.007,0.359,0.932
+        In: sku_kit_m2l1_vessel14(slot1)
+sku_part_medium_gear18 at    0.15,  -1.20,   0.92,-0.001,-0.001,0.017,1.000
+        In: sku_medium_gear_vessel16(slot2)
+sku_part_medium_gear19 at    0.15,  -1.28,   0.92,0.001,-0.003,0.018,1.000
+        In: sku_medium_gear_vessel16(slot4)
+sku_part_medium_gear20 at    0.23,  -1.28,   0.92,-0.002,0.001,0.012,1.000
+        In: sku_medium_gear_vessel16(slot3)
+sku_large_gear_vessel21 at    0.39,  -1.26,   0.92,0.000,0.000,0.721,0.693
+        slot1 sku_part_large_gear sku_part_large_gear23 ( 0.39442 -1.31785  0.91521)
+        slot2 sku_part_large_gear sku_part_large_gear22 ( 0.38994 -1.20795  0.91521)
+sku_part_large_gear22 at    0.39,  -1.21,   0.92,0.002,-0.002,0.016,1.000
+        In: sku_large_gear_vessel21(slot2)
+sku_part_large_gear23 at    0.39,  -1.32,   0.92,-0.002,-0.001,0.188,0.982
+        In: sku_large_gear_vessel21(slot1)
+
+
+
+[DEBUG] [1603131694.193875206]:  crclServer sRobot= motoman_
+
+
+
+
+
+
+
+TEST SEQUENCE
+RCS> where
+Status Joints   = 0.001, 0.001, 0.001, 0.001, 0.001, 0.001
+FK Robot Pose   =   0.65,   0.00,   0.70,0.707,0.000,0.707,-0.000
+RCS> home
+RCS> home0:0:0:0:0:0:
+
+RCS> where
+RCS> Status Joints   =-0.000,-0.000,-0.000,-0.000,-0.000,-0.000
+FK Robot Pose   =   0.65,  -0.00,   0.70,0.707,-0.000,0.707,0.000
+
+RCS> set gripper 1
+RCS> setGripper=1
+
+RCS> set gripper 0
+RCS> setGripper=0
+set gripper 1
+RCS> setGripper=1
+
+Becuase gripper is now force based it closes until it reaches a
+physical limit as it doesn't detect the other finger only collision
+with a gear.
+RCS> close
+setGripper=0
+RCS>open
+setGripper=1
+
+RCS> canned
+namedJointMove:joints.home0:0:0:0:0:0:
+namedJointMove:joints.nothome0.001:0.001:0.001:0.001:0.001:0.001:
+namedJointMove:joints.random0.01:0.099:0.2:0.41:0.71:0.22:
+namedCommand:macro_autofaster:faster:faster:
+namedCommand:macro_homingreset:goto joints.NotHome:
+RCS>goto NotHome
+
+# goto name joint location (joints.nothome)
+RCS> goto ?
+RCS> MACROS
+macro_auto
+macro_homing
+POSES
+pose.a1
+JOINTS
+joints.home
+joints.nothome
+joints.random
+RCS> goto joints.nothome
+
+RCS> where
+Status Joints   = 0.001, 0.001, 0.001, 0.001, 0.001, 0.001
+FK Robot Pose   =   0.65,   0.00,   0.70,0.707,0.000,0.707,-0.000
+
+
+

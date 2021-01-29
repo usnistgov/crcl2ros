@@ -1,0 +1,27 @@
+<launch>
+<arg name="my_ns" default="lrmate"/>
+ <!--   <include file="$(find fanuc_lrmate200id_support)/launch/complete.launch" pass_all_args="true"> -->
+ 
+<arg name="aprs" value="false" /> 
+<arg name="ns" value="/lrmate/" /> 
+<arg name="world" default="$(find fanuc_lrmate200id_support)/world/aprs-lab.world" />
+<arg name="robotxyz" value="" />
+
+<param  name="/lrmate/robot_description"  command="$(find xacro)/xacro --inorder '$(find fanuc_lrmate200id_support)/urdf/tworobots.xacro'" />
+
+
+<group ns="$(arg my_ns)">
+   <!-- include gazebo_ros launcher -->
+   <include file="$(find fanuc_lrmate200id_support)/launch/empty_world.launch" >
+      <arg name="world_name" value="$(arg world)" />
+      <arg name="debug" value="false" />
+      <arg name="gui" value="true" />
+      <arg name="paused" value="false" />
+      <arg name="use_sim_time" value="false" />
+      <arg name="verbose" value="true" />
+   </include>
+
+   
+
+</group>
+</launch>

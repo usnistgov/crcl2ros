@@ -1,0 +1,7 @@
+# Grip Command
+
+#Enable/disable gripper
+bool enable
+
+---
+bool success

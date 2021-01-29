@@ -1,0 +1,76 @@
+
+
+Test session:
+
+fanuc_joint_1
+fanuc_joint_2
+fanuc_joint_3
+fanuc_joint_4
+fanuc_joint_5
+fanuc_joint_6fanuc_joint_1
+fanuc_joint_2
+fanuc_joint_3
+fanuc_joint_4
+fanuc_joint_5
+fanuc_joint_6
+fanuc_joint_6
+fanuc_joint_5
+fanuc_joint_4
+fanuc_joint_3
+fanuc_joint_2
+fanuc_joint_1Accept 127.0.0.1:57022
+GetStatus
+GetStatusReply=3:CRCL_Done
+GetStatus
+GetStatusReply=3:CRCL_Done
+GetStatus
+GetStatusReply=3:CRCL_Done
+GetStatus
+GetStatusReply=3:CRCL_Done
+GetStatus
+GetStatusReply=3:CRCL_Done
+GetStatusReply=4:CRCL_Done
+GetStatusReply=4:CRCL_Done
+GetStatusReply=5:CRCL_Done
+GetStatusReply=5:CRCL_Done
+fanuc_joint_1,fanuc_joint_2,fanuc_joint_3,fanuc_joint_4,fanuc_joint_5,fanuc_joint_6,fanuc_joint_6,fanuc_joint_5,fanuc_joint_4,fanuc_joint_3,fanuc_joint_2,fanuc_joint_1======================================================
+Command =       CANON_MOVE_JOINT
+CommandNum =    1
+Final Pose =       0.00,   0.00,   0.00| -nan,  nan, -nan
+Joints =        0.0523599
+JointNum =
+bStraight =     0
+dwell_seconds = 0
+bCoordinated =  1
+eepercent =     0
+======================================================
+Command =       CANON_STOP_MOTION
+CommandNum =    2
+Final Pose =       0.00,   0.00,   0.00| -nan,  nan, -nan
+Joints =
+JointNum =
+bStraight =     0
+dwell_seconds = 0
+bCoordinated =  0
+eepercent =     0
+fanuc_joint_1,fanuc_joint_2,fanuc_joint_3,fanuc_joint_4,fanuc_joint_5,fanuc_joint_6,fanuc_joint_6,fanuc_joint_5,fanuc_joint_4,fanuc_joint_3,fanuc_joint_2,fanuc_joint_1======================================================
+Command =       CANON_MOVE_JOINT
+CommandNum =    5
+Final Pose =       0.00,   0.00,   0.00| -nan,  nan, -nan
+Joints =        0.0523599
+JointNum =
+bStraight =     0
+dwell_seconds = 0
+bCoordinated =  1
+eepercent =     0
+======================================================
+Command =       CANON_STOP_MOTION
+CommandNum =    6
+Final Pose =       0.00,   0.00,   0.00| -nan,  nan, -nan
+Joints =
+JointNum =
+bStraight =     0
+dwell_seconds = 0
+bCoordinated =  0
+eepercent =     0
+

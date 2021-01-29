@@ -1,0 +1,56 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(println)
+
+## Compile as C++11, supported in ROS Kinetic and newer NOTE ONE DASH!!
+add_compile_options(-std=c++11)
+
+
+find_package(catkin REQUIRED COMPONENTS
+  roscpp 
+  rospy
+  rosconsole_bridge
+)
+
+catkin_package(
+INCLUDE_DIRS include
+${boost_INCLUDE_DIRS}
+#  LIBRARIES printf
+#  CATKIN_DEPENDS message_runtime
+#  DEPENDS system_lib
+)
+
+## System dependencies are found with CMake's conventions
+find_package(Boost REQUIRED COMPONENTS system thread)
+
+catkin_python_setup()
+
+
+
+include_directories(
+ include
+ ${catkin_INCLUDE_DIRS}
+  ${Boost_INCLUDE_DIRS}
+
+ )
+
+## Declare a C++ a
+add_executable(${PROJECT_NAME}
+    src/println.cpp 
+)
+target_link_libraries(${PROJECT_NAME}
+  ${catkin_LIBRARIES}
+)
+
+## Mark executable scripts (Python etc.) for installation
+install(PROGRAMS
+  bin/print
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install(TARGETS ${PROJECT_NAME} 
+   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+
