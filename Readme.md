@@ -1,12 +1,19 @@
 
-# GZAPRSROS
+
+# Crcl 2 Ros Workspace
 
 ----
 
 
+
 
-This gives a brief overview of how to install, build and run the gz(Gazebe) aprs (agility performane robot system) ros(robot operating system) code. It is open source with no copyright as it is government work.
 
+
+This repository contains C++ code that provides a CRCL XML streaming and parsing component, that maps command and status motion primitives from CRCL to ROS,  then uses ROS moveit to plan motion trajectories that are then simulated in Gazebo.
+
+
+
+
 
 
 
@@ -14,253 +21,189 @@ This gives a brief overview of how to install, build and run the gz(Gazebe) aprs
 # <a name="Requirements"></a>Requirements
 
 
+
 
 
-Ubuntu and Platforms Tested:
 
+- Ubuntu 16.04 Trusty
 
 
-(1)  Ubuntu 16.04.6 LTS
 
-	> lsb_release -a
-	No LSB modules are available.
-	Distributor ID:	Ubuntu
-	Description:	Ubuntu 16.04.6 LTS
-	Release:	16.04
-	Codename:	xenial
-	> uname -a
-	Linux 4.4.0-165-generic #193-Ubuntu SMP Tue Sep 17 17:42:52 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+- Gazebo 7 (to allow gazebo_ros_api packages)
 
 
-And Linux installs for:
 
-- Gazebo 9
+- ROS  1 Kinetic
 
-- Ros I Kinetic
 
-- gnu c++
 
+- CodeSynthesis, Xerces XML tools
 
 
 
+- Gnu C++ compiler
 
 
 
-and if compiling with QT Qt5.9.1 (as Qt 5.5 is VERY BUGGY on Ubuntu 16.04)
+- moveit
 
 
 
-From: https://linuxhint.com/install-qt-5-9-1-qt-creator-4-3-1-ubuntu/
 
-	wget http://download.qt.io/official_releases/qt/5.9/5.9.1/qt-opensource-linux-x64-5.9.1.run
-	chmod +x qt-opensource-linux-x64-5.9.1.run
-	./qt-opensource-linux-x64-5.9.1.run
+# <a name="Installation"></a>Installation
 
 
+Clone the crcl2ros repository and change to its main subfolder.
 
 
 
+
 
 
 
-# <a name="Gazebo_APRS_ROS_Build"></a>Gazebo APRS ROS Build
 
+# <a name="Building"></a>Building
 
 
 
-Navigate to the NIST github site, and clone the gzaprsros repository:
+	>  catkin build -DCMAKE_BUILD_TYPE=Debug 
 
-	> git clone https://github.com/usnistgov/gzaprsros.git
+
 
 
-You should see the following files and folders:
 
-<TABLE>
-<TR>
-<TD>File/Folder<BR></TD>
-<TD>Description<BR></TD>
-</TR>
-<TR>
-<TD>Install.txt<BR></TD>
-<TD>Brief description of installation<BR></TD>
-</TR>
-<TR>
-<TD>InstallScripts<BR></TD>
-<TD>Folder containing install scripts for gazebo, ros, etc.<BR></TD>
-</TR>
-<TR>
-<TD>Readme.md<BR></TD>
-<TD>Readme you are reading.<BR></TD>
-</TR>
-<TR>
-<TD>Worlds<BR></TD>
-<TD>World folder containing iterations on the APRS laboratory setup<BR></TD>
-</TR>
-<TR>
-<TD>bin9<BR></TD>
-<TD>Folder containing canned bash scripts to run agility demos<BR></TD>
-</TR>
-<TR>
-<TD>doc<BR></TD>
-<TD>Folder containing documentation<BR></TD>
-</TR>
-<TR>
-<TD>gzaprsros.docx<BR></TD>
-<TD>Word document from which Readme.md was generated<BR></TD>
-</TR>
-<TR>
-<TD>gzdatabase<BR></TD>
-<TD>Gazebo folder containing models and media definitions<BR></TD>
-</TR>
-<TR>
-<TD>images<BR></TD>
-<TD>Image folder for the readme<BR></TD>
-</TR>
-<TR>
-<TD>isvalid.bash<BR></TD>
-<TD>Bash script to determine and/or install missing Ubuntu packages.<BR></TD>
-</TR>
-<TR>
-<TD>qtbuild.bash<BR></TD>
-<TD>Bash script that uses Qt to build gzaprsros.<BR></TD>
-</TR>
-<TR>
-<TD>rosbuild.bash<BR></TD>
-<TD>Bash script that uses ROS catkin_make to build gzaprsros.<BR></TD>
-</TR>
-<TR>
-<TD>src<BR></TD>
-<TD>Src folder containing ROS layout of gzaprsros packages<BR></TD>
-</TR>
-</TABLE>
+It is suggested to use a Debug compilation so you can then attach to the running crclapp in Qt IDE to debug.
 
 
 
 
+# <a name="Running"></a>Running
 
 
-To build gzaprsros run the bash script:
 
-	> ./rosbuild.bash
+	> source devel/setup.bash 
+	> roslaunch fanuc_lrmate200id_support  top.launch 
 
+
 
-Note if all missing packages are automatically installed, except ROS kinetic. If you have a different version of ROS (lunar) then it won't build at this time.
 
 
+
 
-A warning is printed at the top build that you might miss that informs you that the bash script found a duplicate Gazebo installation besides Gazebo9. THIS CAN BE A PROBLEM AND EVERYTHING WILL COMPILE BUT YOU WILL GET A SEGMENTATION FAULT IN GZSERVER.
 
 
+
 
-FYI, there is a circular dependency of headers so one of the packages is run in isolation first, then all the packages are compile with cakint_build.
 
-# <a name="RUNNING"></a>RUNNING
 
+
 
 
 
-APRS Gazebo Execution - TWO OPTIONS mutli-terminal options: (a) (b) and (c)
 
+# <a name="Notes_on_CRCL_XML_C++_Components"></a>Notes on CRCL XML C++ Components
 
 
-(a) no gazebo-ros installation. Also attempts to kill any stray gazebo and ros orphan processes (gzserver, gzclient, rosmaster).
 
+# <a name="Installing_Xerces_C_with_Ubuntu"></a>Installing Xerces C with Ubuntu
 
 
-   
+[<u>here</u>](https://www.daniweb.com/hardware-and-software/linux-and-unix/threads/409769/ubuntu-11-10-xerces-c) As far as I'm aware libxerces is the same as pretty much any other library in Debian based systems. It should be available in the repositories (the exact version will depend on which version of Ubuntu you're running).
 
-	a> bin9/agilitydemo.bash
 
 
+You can use apt-get to install the packages for the library and the dev files. Then to use them in your C/C++ programs you simply #include the appropriate headers and link with the library when compiling/linking.
 
 
 
 
-(b) gazebo-ros packages using "ROS launch" for safety system and modbus interaction. Sets up Gazebo and DLL library lookup environment variables before invoking sequence of operations. Also attempts to kill any stray gazebo and ros orphan processes (gzserver, gzclient, rosmaster).
+	sudo apt-get update 
+	apt-cache search libxerces 
+	sudo apt-get install libxerces-c3.1 libxerces-c-dev 
 
-	b> bin9/rosagilitydemo.bash
+Need include file path CMakeLists.txt:
 
 
 
 
+	include_directories(/usr/include/xercesc) 
 
+Link library in CMakeLists.txt:
 
-(c) traditional "ROS launch" but 
 
-	c> cd src
-	c> source devel/setup.bash
-	c> roslaunch gzrcs gzrcs_demo.launch 
 
 
+	link_directories(/usr/lib/x86_64-linux-gnu/) 
 
+Need to link against libxerces.a in CMakeLists.txt:
 
 
 
-but you must make sure gzserver, ros, etc are not orphans and left running. No pkill in roslaunch. 
+target_link_libraries(nist_fanuc 
 
 
 
-runs gazebo as a ROS subsystem to allow rqt, etc. to communicate with Gazebo using ROS communication or services.
 
-# <a name="TESTING"></a>TESTING
+	libxerces-c.a   
+	${catkin_LIBRARIES} 
+	${Boost_LIBRARIES} 
+	) 
 
+
 
 
 
-We will assume option (a) has been chosen, and you should see this screen:
+## <a name="Installing_CodeSynthesis_XSD"></a>Installing CodeSynthesis XSD
 
 
-![Figure1](./images/gzaprsros_image1.gif)
+[<u>here</u>](http://www.codesynthesis.com/products/xsd/download.xhtml)
 
 
 
-After running go into the aprs gz Motoman bash command line terminal and type 
+Chose the linux deb install file that matches your computer (below 64 bit amd).
 
-	> auto
 
 
-Likewise go into theaprs gz Fanuc  Fanuc bash command line terminal and type
+Download xsd_4.0.0-1_amd64.deb and it will say open with Ubuntu Software Center
 
-	> auto
 
 
-You should see both robot moving gears from trays to kits.
+Click to install, authenticate and add /usr/include/xsd/cxx/xml as include path.
 
 
-![Figure2](./images/gzaprsros_image2.gif)
 
-# <a name="DEBUGGING"></a>DEBUGGING 
+Need include file path in CMakeLists.txt:
 
 
 
 
-You can use the QT IDE to do testing debug of the gzrcs application. To do so, first invoke: 
+	include_directories(/usr/include/xsd/cxx/xml) 
 
-	a> bin9/agilitylab.bash
+If you cannot run Ubuntu software centerto install CodeSynthesis, you can download the source and install it. You need to go to the web page: [<u>here</u>](http://www.codesynthesis.com/products/xsd/download.xhtml) and select:
 
 
-which starts the rosmaster, and brings up the Gazebo with the world configures as in ./World aprs-lab.world.
 
 
+	xsd-4.0.0-x86_64-linux-gnu.tar.bz2 
 
-Then, start Qt and navigate to the gzrcs.pro file in src/gzrcs. Build the system. And then "debug" the application. Depending on how the Debug command line parameter is set, either the Fanuc (-r fanuc_) or the Motoman (-r motoman_) should be the robot under control. It should read the Config.ini file, connect to the ROS master (running via the agilitylab.bash) and the Gazebo via plugins. You can set breakpoints and control the robot via the command line interface in the pop up console.
+It will be saved into /usr/local/downloads, but you can save it anywhere. Then cd to where you saved it, and do this:
 
 
 
 
+	tar --bzip2 -xvf xsd-4.0.0-x86_64-linux-gnu.tar.bz2 (dash-dash bzip2, dash-xvf) 
 
+It will create a directory xsd-4.0.0-x86_64-linux-gnu.
 
 
 
+Make a symbolic link:
 
 
 
 
+	ln -s <path/to/xsd-4.0.0-x86_64-linux-gnu/libxsd/xsd /usr/local/include/xsd 
+	e.g., ln -s /usr/local/xsd-4.0.0-x86_64-linux-gnu/libxsd/xsd /usr/local/include/xsd 
 
-
-
-
-
-
-
+
 
