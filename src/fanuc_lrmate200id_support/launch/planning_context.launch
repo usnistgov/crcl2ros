@@ -9,9 +9,6 @@
   <!-- Load universal robot description format (URDF) -->
   <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find fanuc_lrmate200id_support)/urdf/lrmate200id.urdf"/>
 
-  <node name="p99" pkg="println" type="println" args="'******PLANNING CONTEXT LAUNCH ROBOT_DESCRIPTION ARG $(arg robot_description)'" respawn="false" output="screen" />
- <node name="p199" pkg="println" type="println" args="'******PLANNING CONTEXT LAUNCH NS ARG $(arg ns)'" respawn="false" output="screen" />
-
   <!-- The semantic description that corresponds to the URDF 
   <param name="$(arg robot_description)_semantic" textfile="$(find fanuc_lrmate200id_support)/config/fanuc_lrmate200id.srdf" />-->
 

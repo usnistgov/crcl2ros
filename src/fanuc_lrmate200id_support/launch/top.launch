@@ -2,7 +2,6 @@
 <launch>
 
 <arg name="package" value="$(eval find('fanuc_lrmate200id_support'))" />
-<node name="pp1" pkg="println" type="println" args="'******package ARG= $(arg package)'" respawn="false" output="screen" />
 
 <include file="$(find fanuc_lrmate200id_support)/launch/robot_ns.launch">
     <arg name="my_ns" value="lrmate" /> 

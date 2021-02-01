@@ -1,5 +1,3 @@
-// CrclPrimitives.h
-
 /*
  * DISCLAIMER:
  * This software was produced by the National Institute of Standards
@@ -10,6 +8,10 @@
  *
  * See NIST Administration Manual 4.09.07 b and Appendix I.
  */
+// CrclPrimitives.h
+
+#ifndef CrclPrimitives_h_
+#define CrclPrimitives_h_
 
 #pragma once
 #include <map>
@@ -259,3 +261,4 @@ namespace crcl {
 
     };
 };
+#endif

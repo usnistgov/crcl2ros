@@ -1,5 +1,3 @@
-// Globals.cpp
-
 /*
  * DISCLAIMER:
  * This software was produced by the National Institute of Standards

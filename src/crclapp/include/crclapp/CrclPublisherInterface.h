@@ -1,5 +1,3 @@
-// CrclPublisherInterface.h
-
 /*
  * DISCLAIMER:
  * This software was produced by the National Institute of Standards
@@ -10,8 +8,11 @@
  *
  * See NIST Administration Manual 4.09.07 b and Appendix I.
  */
+// CrclPublisherInterface.h
 
-#pragma once
+#ifndef CrclPublisherInterface_h_
+#define CrclPublisherInterface_h_
+
 #include <string>
 #include "crclapp/CrclPrimitives.h"
 #include <iostream>
@@ -107,3 +108,4 @@ namespace crcl {
         CrclStatus _status;
     };
 };
+#endif

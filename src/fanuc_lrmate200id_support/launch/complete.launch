@@ -29,10 +29,6 @@
    <param unless="$(arg aprs)" name="$(arg ns)robot_description" textfile="$(find fanuc_lrmate200id_support)/urdf/lrmate200id.urdf" />
    <param unless="$(arg aprs)" name="$(arg ns)robot_description_semantic" textfile="$(find fanuc_lrmate200id_support)/config/fanuc_lrmate200id.srdf" />
    
-  <node name="p1" pkg="println" type="println" args="'******COMPLETE LAUNCH ROBOT ARG= $(arg robot)'" respawn="false" output="screen" />
-  <node name="p2" pkg="println" type="println" args="'******COMPLETE LAUNCH ROBOT_DESCRIPTION PARAM $$(arg ns)robot_description'" respawn="false" output="screen" />
-  <node name="p3" pkg="println" type="println" args="'******COMPLETE LAUNCH NS ARG $(arg ns)'" respawn="false" output="screen" />
- <node name="p4" pkg="println" type="println" args="'******COMPLETE LAUNCH APRS ARG $(arg aprs)'" respawn="false" output="screen" />
 
    <!-- include gazebo_ros launcher -->
    <include file="$(find gazebo_ros)/launch/empty_world.launch" >

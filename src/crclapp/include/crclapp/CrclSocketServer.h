@@ -1,6 +1,3 @@
-#ifndef CRCLSERVER_H
-#define CRCLSERVER_H
-// CrclSocketServer.h
 /*
  * DISCLAIMER:
  * This software was produced by the National Institute of Standards
@@ -11,6 +8,9 @@
  *
  * See NIST Administration Manual 4.09.07 b and Appendix I.
  */
+#ifndef CRCLSERVER_H
+#define CRCLSERVER_H
+// CrclSocketServer.h
 
 #include <memory>
 

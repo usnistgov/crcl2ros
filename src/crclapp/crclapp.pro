@@ -309,20 +309,9 @@ DISTFILES += \
     Notes \
     notes
 
-# Hard to make distinction between general build and command line qmake build
-build_features.path     = "../../../install/lib/crclapp/config"
-#build_features.path     = "$$OUT_PWD/$$DESTDIR/config"
-build_features.files     =    $$PWD/config/Config.ini \
-   $$PWD/config/MotomanSia20d.urdf\
-   $$PWD/config/FanucLRMate200iD.urdf\
-   $$PWD/config/lrmate200id.urdf\
-   $$PWD/config/motoman_sia20d.ini\
-   $$PWD/config/fanuc-lrmate-200id.ini
-
-INSTALLS  += build_features
 
 # THis moves not copies executable from build to install
-target.path = ../../../install/lib/crclapp
-INSTALLS += target
+#target.path = ../../../install/lib/crclapp
+#INSTALLS += target
 
 
