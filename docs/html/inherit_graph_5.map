@@ -1,0 +1,3 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classCGlobals.html" title="CGlobals is a catch&#45;all data structure for collecting global functions, extensions, parameters, etc. Functions here usually vary between windows and linux, or there is no easy mechanism in C++ to extend classes (e.g., string) like in C#. " alt="" coords="5,5,81,32"/>
+</map>
