@@ -1,0 +1,5 @@
+<map id="RCS::CCanonWorldModel" name="RCS::CCanonWorldModel">
+<area shape="rect" id="node2" href="$structRCS_1_1CCanonCmd.html" title="CanonCmd is the controller command structure. " alt="" coords="109,200,244,227"/>
+<area shape="rect" id="node3" href="$structcrcl__rosmsgs_1_1CrclCommandMsg.html" title="crcl_rosmsgs::CrclCommandMsg" alt="" coords="5,81,223,108"/>
+<area shape="rect" id="node4" href="$structRCS_1_1PoseTolerance.html" title="RCS::PoseTolerance" alt="" coords="247,81,394,108"/>
+</map>

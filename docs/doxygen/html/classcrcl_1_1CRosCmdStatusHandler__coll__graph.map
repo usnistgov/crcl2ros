@@ -1,0 +1,6 @@
+<map id="crcl::CRosCmdStatusHandler" name="crcl::CRosCmdStatusHandler">
+<area shape="rect" id="node2" href="$classRCS_1_1Thread.html" title="Thread is an RCS ulapi equivalent for a timed thread. Given a cycle time, the thread provides a wait ..." alt="" coords="254,7,353,33"/>
+<area shape="rect" id="node3" href="$classRCS_1_1Timer.html" title="Timer is a general&#45;purpose timer. The Timer is a general&#45;purpose timer, which can be used for waiting..." alt="" coords="5,7,97,33"/>
+<area shape="rect" id="node4" href="$classRCS_1_1CMessageQueue.html" title="RCS::CMessageQueue\l\&lt; CrclMessage \&gt;" alt="" coords="223,58,383,99"/>
+<area shape="rect" id="node5" href="$classRCS_1_1CPriorityMessageQueue.html" title="RCS::CPriorityMessageQueue\l\&lt; crcl_rosmsgs::CrclCommandMsg,\l RCS::compareCrclId \&gt;" alt="" coords="187,123,420,179"/>
+</map>

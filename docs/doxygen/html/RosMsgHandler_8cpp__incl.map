@@ -1,0 +1,18 @@
+<map id="/home/michalos/ros/crcl2ros/src/crclapp/src/RosMsgHandler.cpp" name="/home/michalos/ros/crcl2ros/src/crclapp/src/RosMsgHandler.cpp">
+<area shape="rect" id="node4" href="$IRcs_8h.html" title="rcs/IRcs.h" alt="" coords="950,408,1033,435"/>
+<area shape="rect" id="node32" href="$Debug_8h.html" title="rcs/Debug.h" alt="" coords="427,490,521,517"/>
+<area shape="rect" id="node39" href="$Crcl2RosMsgApi_8h.html" title="crclapp/Crcl2RosMsgApi.h" alt="" coords="1434,259,1613,285"/>
+<area shape="rect" id="node43" href="$RosMsgHandler_8h.html" title="crclapp/RosMsgHandler.h" alt="" coords="2201,109,2374,136"/>
+<area shape="rect" id="node50" href="$CrclPublisherInterface_8h.html" title="crclapp/CrclPublisherInterface.h" alt="" coords="1649,184,1857,211"/>
+<area shape="rect" id="node8" href="$Core_8h.html" title="rcs/Core.h" alt="" coords="1367,647,1450,673"/>
+<area shape="rect" id="node34" href="$Conversions_8h.html" title="Conversions.h" alt="" coords="522,572,629,599"/>
+<area shape="rect" id="node37" href="$RCSPriorityQueue_8h.html" title="rcs/RCSPriorityQueue.h" alt="" coords="1474,647,1637,673"/>
+<area shape="rect" id="node9" href="$math_8h.html" title="math.h" alt="" coords="303,729,365,755"/>
+<area shape="rect" id="node40" href="$CrclWm_8h.html" title="crclapp/CrclWm.h" alt="" coords="1713,333,1840,360"/>
+<area shape="rect" id="node41" href="$RCSThreadTemplate_8h.html" title="rcs/RCSThreadTemplate.h" alt="" coords="1861,572,2039,599"/>
+<area shape="rect" id="node42" href="$RCSMsgQueueThread_8h.html" title="rcs/RCSMsgQueueThread.h" alt="" coords="2266,572,2453,599"/>
+<area shape="rect" id="node46" href="$CrclSocketServer_8h.html" title="crclapp/CrclSocketServer.h" alt="" coords="2117,490,2300,517"/>
+<area shape="rect" id="node47" href="$CrclSubscriberInterface_8h.html" title="crclapp/CrclSubscriberInterface.h" alt="" coords="1945,184,2161,211"/>
+<area shape="rect" id="node48" href="$CrclPrimitives_8h.html" title="CrclPrimitives.h" alt="" coords="1695,259,1810,285"/>
+<area shape="rect" id="node49" href="$CrclRobotImpl_8h.html" title="crclapp/CrclRobotImpl.h" alt="" coords="2781,184,2943,211"/>
+</map>

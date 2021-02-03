@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$structRCS_1_1PoseTolerance.html" title="RCS::PoseTolerance" alt="" coords="122,5,269,32"/>
+<area shape="rect" id="node3" href="$structWorldModel_1_1CInstances.html" title="The CInstances struct contains all the instances of the shapes in the world. " alt="" coords="112,56,279,83"/>
+<area shape="rect" id="node4" href="$structWorldModel_1_1CShapes.html" title="The CShapes struct base class is a std vector of shapes. The list of shapes is defined by the static ..." alt="" coords="119,107,272,133"/>
+</map>

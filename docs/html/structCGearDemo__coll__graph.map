@@ -1,8 +1,0 @@
-<map id="CGearDemo" name="CGearDemo">
-<area shape="rect" id="node2" href="$structShapeModel_1_1CShapes.html" title="ShapeModel::CShapes" alt="" coords="721,7,877,33"/>
-<area shape="rect" id="node3" title="STL class. " alt="" coords="377,7,532,33"/>
-<area shape="rect" id="node5" href="$classCGzModelReader.html" title="The CGzModelReader class establishes communication subscriber to read all gz models updates..." alt="" coords="736,116,863,143"/>
-<area shape="rect" id="node7" title="STL class. " alt="" coords="181,181,261,208"/>
-<area shape="rect" id="node10" href="$structShapeModel_1_1CShape.html" title="The CShape struct is the basic definition of a shape in the world model. In this case its a gear..." alt="" coords="725,256,874,283"/>
-<area shape="rect" id="node8" title="STL class. " alt="" coords="5,174,132,215"/>
-</map>

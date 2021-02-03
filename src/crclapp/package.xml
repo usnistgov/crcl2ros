@@ -46,7 +46,6 @@
 <build_depend>tf</build_depend>
 <build_depend>sensor_msgs</build_depend>
 <build_depend>aprs_headers</build_depend>
-<build_depend>crcl_rosmsgs</build_depend>
 
 
 <exec_depend>message_runtime</exec_depend>
@@ -54,5 +53,4 @@
 <exec_depend>std_msgs</exec_depend>
 <exec_depend>tf</exec_depend>
 <exec_depend>sensor_msgs</exec_depend>
-<exec_depend>crcl_rosmsgs</exec_depend>
 </package>

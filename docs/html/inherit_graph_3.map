@@ -1,3 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classCGazebo.html" title="The CGazebo class waits for a gazebo server to be running &#45; i.e., gzserver program. Loads gazebos argc,argv parameters. Creates a node for gazebo protobuf communication used by any gazebo publisher/subscriber. " alt="" coords="5,5,83,32"/>
-</map>

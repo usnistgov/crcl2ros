@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classRCS_1_1CMessageQueue.html" title="The CMessageQueue offers a mutexed front end to a STL/std deque. The queue is a LIFO data structure..." alt="" coords="5,5,197,32"/>
+<area shape="rect" id="node2" href="$classRCS_1_1CMsgQueueThread.html" title="CMsgQueueThread is a message queued thread. It is activated when a message is received. &#160;&#160;Notes: http://stackoverflow.com/questions/768351/complete&#45;example&#45;using&#45;boostsignals&#45;for&#45;c&#45;eventing. " alt="" coords="245,5,449,32"/>
+</map>
