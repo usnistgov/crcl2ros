@@ -106,18 +106,70 @@ CRobotImpl::~CRobotImpl()
     _gzGetJointTraj.shutdown();
     _robotJointState.shutdown();
 }
+
+void CRobotImpl::configure(ros::NodeHandle *nh, std::string ns)
+{
+    nodeHandle(nh);
+    urdfRobotDescriptionRosParam(ns+"/robot_description");
+    moveGroupName(Globals.PLANNING_GROUP);
+
+    std::string tmp;
+    if(!nh->getParam(ns + "/moveit/gripper_topic", tmp))
+        ROS_ERROR_STREAM("Missing ROS param" << Globals.ns  << "/moveit/gripper_topic");
+    gzGripperTopic(tmp);
+
+    if(!nh->getParam(ns + "/moveit/joint_state_publisher_topic", tmp))
+        ROS_ERROR_STREAM("Missing ROS param" << Globals.ns  << "/moveit/joint_state_publisher_topic");
+    jointStatePublisherTopic(tmp);
+
+
+    if(!nh->getParam(ns + "/moveit/robot_model_name", tmp))
+    {
+        ROS_ERROR_STREAM("Missing ROS param" << Globals.ns  << "/moveit/robot_model_name");
+    }
+    gzRobotModelName(tmp);
+
+    int flag;
+    if(!nh->getParam(ns + "/moveit/use_gazebo", flag))
+        ROS_ERROR_STREAM("Missing ROS param" << Globals.ns  << "/moveit/use_gazebo");
+    gzEnabled(flag);
+
+}
 bool CRobotImpl::isConfigurationValid()
 {
-    if(this->nh== nullptr ||
-            this->PLANNING_GROUP.empty() ||
-            this->urdf_robot_description_param.empty() ||
-            this->_robot_name.empty()||
-            this->joint_state_publisher_topic.empty() ||
-            _joint_model_group==nullptr||
-            _move_group.get() == nullptr ||
-            this->_gzrobot_name.empty() ||
-            _robot_model.get() == nullptr)
+
+    ROS_DEBUG_STREAM( "moveGroupName " << this->PLANNING_GROUP);
+    ROS_DEBUG_STREAM( "gripper_topic= " << this->gz_gripper_topic);
+    ROS_DEBUG_STREAM( "joint_state_publisher_topic= " << this->joint_state_publisher_topic);
+    ROS_DEBUG_STREAM( "gzRobotModelName= " << this->_gzrobot_name);
+    ROS_DEBUG_STREAM( "use_gazebo= " << this->gz_enabled);
+
+    try {
+        if(this->nh== nullptr )
+            throw "CRobotImpl null node handle";
+        if(this->PLANNING_GROUP.empty() )
+            throw "CRobotImpl empty  PLANNING_GROUP";
+        if(this->urdf_robot_description_param.empty() )
+            throw "CRobotImpl empty  urdf_robot_description_param";
+        if(this->_robot_name.empty() )
+            throw "CRobotImpl empty  _robot_name";
+        if(this->joint_state_publisher_topic.empty() )
+            throw "CRobotImpl  empty joint_state_publisher_topic";
+        if(this->_joint_model_group==nullptr )
+            throw "CRobotImpl null  _joint_model_group";
+        if(this->_move_group==nullptr )
+            throw "CRobotImpl null  _move_group";
+        if(this->_gzrobot_name.empty() )
+            throw "CRobotImpl  empty _gzrobot_name";
+        if(this->_robot_model==nullptr )
+            throw "CRobotImpl null  _robot_model";
+    }
+    catch(std::string err)
+    {
+        ROS_DEBUG_STREAM( "CRobotImpl configuration exception= " << err);
         return false;
+    }
+    ROS_DEBUG_STREAM( "CRobotImpl configuration valid");
     return true;
 }
 CRobotImpl & CRobotImpl::assertConfigurationValid()
@@ -476,10 +528,10 @@ moveit_msgs::RobotTrajectory CRobotImpl::moveTo(tf::Pose rbtFinal,
 
             // THese have all been moved to ROS params
             // plan the trajectory Cartesian motion
-//            double jump_threshold = 0.00; // zero means ignore since KDL
-//            //double jump_threshold = 0.01; // zero means ignore since KDL
-//            double eef_step = 0.01;  // don't know if this per joint or cumulative
-//            bool avoid_collisions=true;
+            //            double jump_threshold = 0.00; // zero means ignore since KDL
+            //            //double jump_threshold = 0.01; // zero means ignore since KDL
+            //            double eef_step = 0.01;  // don't know if this per joint or cumulative
+            //            bool avoid_collisions=true;
             moveit_msgs::MoveItErrorCodes error_code;
 
             // Compute a Cartesian path that follows specified waypoints.

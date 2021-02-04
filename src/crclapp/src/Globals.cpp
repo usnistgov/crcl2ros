@@ -122,6 +122,8 @@ CGlobals::CGlobals()
     Globals.appProperties["PackageSrcPath"] = getexefolder();
     Globals.appProperties["version"] = std::string("")+std::to_string(MAJOR) +":"+std::to_string(MINOR) +":"+std::to_string(BUILD) ;
 
+    PLANNING_GROUP="fanucarm"; /**< name of move group of joints (defined in sdrf) */
+
 
 }
 

@@ -39,6 +39,8 @@ public:
 
     CRobotImpl & init();
 
+    void configure(ros::NodeHandle *nh, std::string ns) ;
+
     CRobotImpl & nodeHandle(ros::NodeHandle *nh)
     {
         this->nh=nh;

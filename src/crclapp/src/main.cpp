@@ -53,8 +53,7 @@ int bBreak=1;// command line option for breaking into attached exe
 std::shared_ptr<CGearDemo> geardemo;
 
 /// Locals
-static std::string PLANNING_GROUP="fanucarm"; /**< name of move group of joints (defined in sdrf) */
-static int gzEnable=1;
+//static int gzEnable=1;
 
 
 
@@ -129,16 +128,19 @@ static void setup()
 
     crclRobotImpl=std::shared_ptr<crcl::CRobotImpl>(new crcl::CRobotImpl());
 
+    crclRobotImpl->configure(CRos::nh.get(), Globals.ns);
     // FIXME: this is hard coded...
-    crclRobotImpl->nodeHandle(CRos::nh.get())
-            .urdfRobotDescriptionRosParam(Globals.ns+"/robot_description")
-            .moveGroupName(PLANNING_GROUP)
-            .gzGripperTopic("/fanuc_lrmate200id/control")
-            .jointStatePublisherTopic("/crcl/joint_states")
-            .gzEnabled(gzEnable)
-            .gzRobotModelName("lrmate")
-            .init()
-            .assertConfigurationValid();
+//    crclRobotImpl->nodeHandle(CRos::nh.get())
+//            .urdfRobotDescriptionRosParam(Globals.ns+"/robot_description")
+//            .moveGroupName(PLANNING_GROUP)
+//            .gzGripperTopic("/fanuc_lrmate200id/control")
+//            .jointStatePublisherTopic("/crcl/joint_states")
+//            .gzEnabled(gzEnable)
+//            .gzRobotModelName("lrmate")
+//            .init()
+//            .assertConfigurationValid();
+
+    crclRobotImpl->init().assertConfigurationValid();
 
 }
 static void startup()
@@ -213,8 +215,6 @@ int main(int argc, char** argv)
             args.push_back(argv[i]);
         }
 
-        gzEnable = Globals.convert<int>(Globals.getCmdOption(args, "gzEnable:=", "1"));
-
 #if 1
         bBreak = Globals.convert<int>(Globals.getCmdOption(args, "qtbreak:=", "0"));
         std::cout << "******** break = " << bBreak <<"\n";
@@ -259,7 +259,7 @@ int main(int argc, char** argv)
         ////////////////////////////////////
         std::string armgroup = Globals.getCmdOption(args, "armgroup:=","");
         if(!armgroup.empty())
-            PLANNING_GROUP=armgroup;
+            Globals.PLANNING_GROUP=armgroup;
 
         Globals.sRosPackageName ="_crclapp";
         Globals.sRosPackageName=rcs_world.robot+Globals.sRosPackageName;
@@ -273,8 +273,8 @@ int main(int argc, char** argv)
         armgroup.clear();
         if(CRos::nh->getParam(Globals.ns+"armgroup", armgroup))
             if(!armgroup.empty())
-                PLANNING_GROUP=armgroup;
-        ROS_DEBUG("********PLANNING_GROUP=%s",PLANNING_GROUP.c_str());
+                Globals.PLANNING_GROUP=armgroup;
+        ROS_DEBUG("********PLANNING_GROUP=%s", Globals.PLANNING_GROUP.c_str());
 
         // Wait till gazebo working?
         ros::service::waitForService("/gazebo/apply_joint_effort", -1);

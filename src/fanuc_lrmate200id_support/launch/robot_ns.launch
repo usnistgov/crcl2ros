@@ -95,7 +95,7 @@
  
       <node name="joint_state_publisher1" pkg="joint_state_publisher" type="joint_state_publisher">
          <param name="/use_gui" value="false" />
-         <rosparam param="source_list">["/crcl/joint_states"]</rosparam>
+         <rosparam param="source_list">["/lrmate/joint_states"]</rosparam>
          <remap from="robot_description" to="robot_description" />
       </node>
       <node name="robot_state_publisher1" pkg="robot_state_publisher" type="state_publisher">

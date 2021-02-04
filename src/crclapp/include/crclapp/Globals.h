@@ -380,6 +380,7 @@ public:
     }
     std::string sRosMasterUrl;
     std::string sRosPackageName;
+    std::string PLANNING_GROUP; /**< name of move group of joints (defined in sdrf) */
 
 
     // Application variables
