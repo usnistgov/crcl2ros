@@ -1,0 +1,24 @@
+<map id="/home/michalos/ros/crcl2ros/src/crclapp/include/crclapp/rcs/IRcs.h" name="/home/michalos/ros/crcl2ros/src/crclapp/include/crclapp/rcs/IRcs.h">
+<area shape="rect" id="node2" href="$Crcl2RosMsgApi_8h.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/include/crclapp/Crcl2RosMsgApi.h" alt="" coords="1295,325,1521,381"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/src/main.cpp" alt="" coords="1758,555,1898,611"/>
+<area shape="rect" id="node8" href="$Demo_8h.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/include/crclapp/Demo.h" alt="" coords="1799,443,1961,499"/>
+<area shape="rect" id="node11" href="$RosMsgHandler_8cpp.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/src/RosMsgHandler.cpp" alt="" coords="418,555,585,611"/>
+<area shape="rect" id="node12" href="$CrclPrimitives_8h.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/include/crclapp/CrclPrimitives.h" alt="" coords="460,213,671,269"/>
+<area shape="rect" id="node18" href="$RosMsgHandler_8h.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/include/crclapp/RosMsgHandler.h" alt="" coords="795,443,1018,499"/>
+<area shape="rect" id="node19" href="$Ros_8cpp.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/src/Ros.cpp" alt="" coords="837,555,977,611"/>
+<area shape="rect" id="node20" href="$CrclWm_8h.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/include/crclapp/CrclWm.h" alt="" coords="1169,109,1345,165"/>
+<area shape="rect" id="node23" href="$Ros_8h.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/include/crclapp/Ros.h" alt="" coords="1345,443,1497,499"/>
+<area shape="rect" id="node3" href="$CommandLineInterface_8h.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/include/crclapp/CommandLine\lInterface.h" alt="" coords="1522,436,1723,507"/>
+<area shape="rect" id="node6" href="$Demo_8cpp.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/src/Demo.cpp" alt="" coords="1361,555,1501,611"/>
+<area shape="rect" id="node10" href="$Crcl2RosMsgApi_8cpp.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/src/Crcl2RosMsgApi.cpp" alt="" coords="1001,555,1173,611"/>
+<area shape="rect" id="node4" href="$CommandLineInterface_8cpp.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/src/CommandLineInterface.cpp" alt="" coords="1525,555,1733,611"/>
+<area shape="rect" id="node5" href="$CrclWm_8cpp.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/src/CrclWm.cpp" alt="" coords="1197,555,1337,611"/>
+<area shape="rect" id="node9" href="$Globals_8cpp.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/src/Globals.cpp" alt="" coords="1922,555,2062,611"/>
+<area shape="rect" id="node13" href="$CrclPublisherInterface_8h.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/include/crclapp/CrclPublisher\lInterface.h" alt="" coords="404,436,599,507"/>
+<area shape="rect" id="node14" href="$CrclPrimitives_8cpp.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/src/CrclPrimitives.cpp" alt="" coords="5,555,160,611"/>
+<area shape="rect" id="node16" href="$CrclSubscriberInterface_8cpp.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/src/CrclSubscriberInterface.cpp" alt="" coords="184,555,395,611"/>
+<area shape="rect" id="node17" href="$CrclSubscriberInterface_8h.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/include/crclapp/CrclSubscriber\lInterface.h" alt="" coords="468,317,671,388"/>
+<area shape="rect" id="node15" href="$CrclPublisherInterface_8cpp.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/src/CrclPublisherInterface.cpp" alt="" coords="609,555,812,611"/>
+<area shape="rect" id="node21" href="$CrclRobotImpl_8cpp.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/src/CrclRobotImpl.cpp" alt="" coords="1345,213,1503,269"/>
+<area shape="rect" id="node22" href="$Shape_8cpp.html" title="/home/michalos/ros\l/crcl2ros/src/crclapp\l/src/Shape.cpp" alt="" coords="1527,213,1667,269"/>
+</map>

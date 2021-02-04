@@ -1,0 +1,12 @@
+<map id="/home/michalos/ros/crcl2ros/src/crclapp/src/CrclRobotImpl.cpp" name="/home/michalos/ros/crcl2ros/src/crclapp/src/CrclRobotImpl.cpp">
+<area shape="rect" id="node7" href="$CrclRobotImpl_8h.html" title="crclapp/CrclRobotImpl.h" alt="" coords="2733,109,2896,136"/>
+<area shape="rect" id="node16" href="$Globals_8h.html" title="crclapp/Globals.h" alt="" coords="2152,288,2275,315"/>
+<area shape="rect" id="node43" href="$math_8h.html" title="math.h" alt="" coords="907,445,970,471"/>
+<area shape="rect" id="node44" href="$gripper_8h.html" title="crclapp/gripper.h" alt="" coords="2154,199,2273,225"/>
+<area shape="rect" id="node46" href="$CrclWm_8h.html" title="crclapp/CrclWm.h" alt="" coords="1513,199,1639,225"/>
+<area shape="rect" id="node49" href="$Conversions_8h.html" title="Conversions.h" alt="" coords="896,288,1003,315"/>
+<area shape="rect" id="node50" href="$Debug_8h.html" title="rcs/Debug.h" alt="" coords="993,199,1087,225"/>
+<area shape="rect" id="node42" href="$Core_8h.html" title="rcs/Core.h" alt="" coords="2133,363,2216,389"/>
+<area shape="rect" id="node47" href="$RCSThreadTemplate_8h.html" title="rcs/RCSThreadTemplate.h" alt="" coords="1728,288,1907,315"/>
+<area shape="rect" id="node48" href="$RCSMsgQueueThread_8h.html" title="rcs/RCSMsgQueueThread.h" alt="" coords="1331,363,1517,389"/>
+</map>

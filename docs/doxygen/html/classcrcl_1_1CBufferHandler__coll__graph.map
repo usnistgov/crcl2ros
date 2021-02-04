@@ -1,0 +1,8 @@
+<map id="crcl::CBufferHandler" name="crcl::CBufferHandler">
+<area shape="rect" id="node2" href="$classIBufferHandler.html" title="IBufferHandler" alt="" coords="5,184,112,211"/>
+<area shape="rect" id="node3" href="$classcrcl_1_1CSocketSession.html" title="crcl::CSocketSession" alt="" coords="136,184,285,211"/>
+<area shape="rect" id="node4" href="$classRCS_1_1Thread.html" title="Thread is an RCS ulapi equivalent for a timed thread. Given a cycle time, the thread provides a wait ..." alt="" coords="37,95,136,121"/>
+<area shape="rect" id="node5" href="$classRCS_1_1Timer.html" title="Timer is a general&#45;purpose timer. The Timer is a general&#45;purpose timer, which can be used for waiting..." alt="" coords="41,5,133,32"/>
+<area shape="rect" id="node6" href="$classSocketServer.html" title="SocketServer" alt="" coords="160,95,261,121"/>
+<area shape="rect" id="node7" href="$classRCS_1_1CMessageQueue.html" title="The CMessageQueue offers a mutexed front end to a STL/std deque. The queue is a LIFO data structure..." alt="" coords="285,95,477,121"/>
+</map>

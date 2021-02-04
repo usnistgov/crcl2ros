@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>CRCL APP: Crcl Namespace Reference</title>
+<title>CRCL APP: crcl Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -43,24 +43,1493 @@
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">Crcl Namespace Reference</div>  </div>
+<div class="title">crcl Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>ROS topic handling.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrcl_1_1CrclClientCmdInterface.html">CrclClientCmdInterface</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CrclServerDelegateInterface parses <a class="el" href="namespaceCrcl.html">Crcl</a> commands and interprets into robot motion. <a href="https://github.com/usnistgov/crcl/blob/master/doc/Reference.md">https://github.com/usnistgov/crcl/blob/master/doc/Reference.md</a>.  <a href="classCrcl_1_1CrclClientCmdInterface.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrcl_1_1CBufferHandler.html">CBufferHandler</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCrcl_1_1CrclStatusMsgInterface.html">CrclStatusMsgInterface</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classCrcl_1_1CrclStatusMsgInterface.html" title="CrclStatusMsgInterface parses a Crcl XML status message from a Crcl server. ">CrclStatusMsgInterface</a> parses a <a class="el" href="namespaceCrcl.html">Crcl</a> XML status message from a <a class="el" href="namespaceCrcl.html">Crcl</a> server.  <a href="classCrcl_1_1CrclStatusMsgInterface.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrcl_1_1CCrcl2RosMsgApi.html">CCrcl2RosMsgApi</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CCrclApi provides some inline <a class="el" href="namespaceCrcl.html">Crcl</a> commands that are queued to a given CNC motion queue.  <a href="classcrcl_1_1CCrcl2RosMsgApi.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrcl_1_1CrclPublisherCmdInterface.html">CrclPublisherCmdInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CrclServerDelegateInterface parses <a class="el" href="namespaceCrcl.html">Crcl</a> commands and interprets into robot motion. <a href="https://github.com/usnistgov/crcl/blob/master/doc/Reference.md">https://github.com/usnistgov/crcl/blob/master/doc/Reference.md</a>.  <a href="classcrcl_1_1CrclPublisherCmdInterface.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcrcl_1_1CrclStatus.html">CrclStatus</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structcrcl_1_1CrclStatus.html" title="CrclStatus is a class that encapsulates all the CRCL information. All lot of the knowledge is convert...">CrclStatus</a> is a class that encapsulates all the CRCL information. All lot of the knowledge is converting ROS oriented <a class="el" href="namespaceRCS.html" title="The namespace Conversion provides some utilities to convert from one representation into another...">RCS</a> data into codesynthesis <a class="el" href="namespaceCrcl.html">Crcl</a> representation and vice versa. <a class="el" href="structcrcl_1_1CrclStatus.html" title="CrclStatus is a class that encapsulates all the CRCL information. All lot of the knowledge is convert...">CrclStatus</a> maintains the unit a crcl session uses to transmit robot commands, latest robot status, etc.  <a href="structcrcl_1_1CrclStatus.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrcl_1_1CrclStatusMsgInterface.html">CrclStatusMsgInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcrcl_1_1CrclStatusMsgInterface.html" title="CrclStatusMsgInterface parses a Crcl XML status message from a Crcl server. ">CrclStatusMsgInterface</a> parses a <a class="el" href="namespaceCrcl.html">Crcl</a> XML status message from a <a class="el" href="namespaceCrcl.html">Crcl</a> server.  <a href="classcrcl_1_1CrclStatusMsgInterface.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrcl_1_1CrclSubscriberDelegateInterface.html">CrclSubscriberDelegateInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CrclServerDelegateInterface parses <a class="el" href="namespaceCrcl.html">Crcl</a> commands and interprets into robot motion. <a href="https://github.com/usnistgov/crcl/blob/master/doc/Reference.md">https://github.com/usnistgov/crcl/blob/master/doc/Reference.md</a>.  <a href="classcrcl_1_1CrclSubscriberDelegateInterface.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrcl_1_1CRobotImpl.html">CRobotImpl</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrcl_1_1CRosCmdMsgHandler.html">CRosCmdMsgHandler</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The CCrcl2RosMsg class handles the command/status interface to ROS. For commands, CCrcl2RosMsg publishes an CrclCommandMsg.  <a href="classcrcl_1_1CRosCmdMsgHandler.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrcl_1_1CRosCmdStatusHandler.html">CRosCmdStatusHandler</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrcl_1_1CSocketSession.html">CSocketSession</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcrcl_1_1GripperStatus.html">GripperStatus</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structcrcl_1_1GripperStatus.html" title="GripperStatus dummy class for future gripper information. ">GripperStatus</a> dummy class for future gripper information.  <a href="structcrcl_1_1GripperStatus.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcrcl_1_1JointReport.html">JointReport</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structcrcl_1_1JointReport.html" title="JointReport dummy class for future customization of Crcl status reports. ">JointReport</a> dummy class for future customization of <a class="el" href="namespaceCrcl.html">Crcl</a> status reports.  <a href="structcrcl_1_1JointReport.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a542d9e42ff68794f610a6c6c95a8e7e6"><td class="memItemLeft" align="right" valign="top">typedef ::ActuateJointsType::ActuateJoint_sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a542d9e42ff68794f610a6c6c95a8e7e6">ActuatorJointSequence</a></td></tr>
+<tr class="separator:a542d9e42ff68794f610a6c6c95a8e7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ccdcbba9b2301029abca2a51990838e"><td class="memItemLeft" align="right" valign="top">typedef ::<a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">PoseType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">PoseType</a></td></tr>
+<tr class="separator:a7ccdcbba9b2301029abca2a51990838e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af45e0ffb9192ccfd1c41261da7f5f4c4"><td class="memItemLeft" align="right" valign="top">typedef ::JointStatusType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#af45e0ffb9192ccfd1c41261da7f5f4c4">JointStatus</a></td></tr>
+<tr class="separator:af45e0ffb9192ccfd1c41261da7f5f4c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0161adc06ae3acb0709b05d8931cbc80"><td class="memItemLeft" align="right" valign="top">typedef ::CommandStateEnumType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a0161adc06ae3acb0709b05d8931cbc80">CommandStateEnum</a></td></tr>
+<tr class="separator:a0161adc06ae3acb0709b05d8931cbc80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8391f66869c99eef4852b5b70a034261"><td class="memItemLeft" align="right" valign="top">typedef ::<a class="el" href="namespacecrcl.html#a8391f66869c99eef4852b5b70a034261">PointType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a8391f66869c99eef4852b5b70a034261">PointType</a></td></tr>
+<tr class="separator:a8391f66869c99eef4852b5b70a034261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbec863ca3a527aedf065381e727b292"><td class="memItemLeft" align="right" valign="top">typedef ::<a class="el" href="namespacecrcl.html#adbec863ca3a527aedf065381e727b292">VectorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#adbec863ca3a527aedf065381e727b292">VectorType</a></td></tr>
+<tr class="separator:adbec863ca3a527aedf065381e727b292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a234e370ffce3264b10aa61862b599ad6"><td class="memItemLeft" align="right" valign="top">typedef ::JointStatusesType::JointStatus_sequence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a234e370ffce3264b10aa61862b599ad6">JointStatusSequence</a></td></tr>
+<tr class="separator:a234e370ffce3264b10aa61862b599ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48654502e6d69ac723d72d97446e0df8"><td class="memItemLeft" align="right" valign="top">typedef ::<a class="el" href="namespacecrcl.html#a48654502e6d69ac723d72d97446e0df8">PoseToleranceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a48654502e6d69ac723d72d97446e0df8">PoseToleranceType</a></td></tr>
+<tr class="separator:a48654502e6d69ac723d72d97446e0df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d0863eafb30c6e5be4a3b9af73a6b9c"><td class="memItemLeft" align="right" valign="top">typedef tf::Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a2d0863eafb30c6e5be4a3b9af73a6b9c">Vector3D</a></td></tr>
+<tr class="separator:a2d0863eafb30c6e5be4a3b9af73a6b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2199ca6fed671d03d3464e66e9ad0435"><td class="memItemLeft" align="right" valign="top">typedef boost::tuple&lt; std::string, <a class="el" href="classcrcl_1_1CSocketSession.html">CSocketSession</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a2199ca6fed671d03d3464e66e9ad0435">CrclMessage</a></td></tr>
+<tr class="separator:a2199ca6fed671d03d3464e66e9ad0435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae796e3ad843979f55c4f725cfd8e274f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classRCS_1_1CMessageQueue.html">RCS::CMessageQueue</a>&lt; <a class="el" href="namespacecrcl.html#a2199ca6fed671d03d3464e66e9ad0435">CrclMessage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#ae796e3ad843979f55c4f725cfd8e274f">CCrclMessages</a></td></tr>
+<tr class="separator:ae796e3ad843979f55c4f725cfd8e274f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3473fe7188663d8e979d2fa66bafb99f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classRCS_1_1CMessageQueue.html">RCS::CMessageQueue</a>&lt; <a class="el" href="namespacecrcl.html#a2199ca6fed671d03d3464e66e9ad0435">CrclMessage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a3473fe7188663d8e979d2fa66bafb99f">CMessageQueue</a></td></tr>
+<tr class="separator:a3473fe7188663d8e979d2fa66bafb99f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a2198caebc66c8e9388a3a2d4ce928bb0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a2198caebc66c8e9388a3a2d4ce928bb0">CRCLCmdStatus</a> { <a class="el" href="namespacecrcl.html#a2198caebc66c8e9388a3a2d4ce928bb0ab7a48e2b528c9e249953119eecb13caa">CRCL_Done</a> = 0, 
+<a class="el" href="namespacecrcl.html#a2198caebc66c8e9388a3a2d4ce928bb0a004cc0f6cb116431a42aafef167b0957">CRCL_Error</a>, 
+<a class="el" href="namespacecrcl.html#a2198caebc66c8e9388a3a2d4ce928bb0ae14bf250fe2b5b8f0d4e4e2441dadc8d">CRCL_Working</a>, 
+<a class="el" href="namespacecrcl.html#a2198caebc66c8e9388a3a2d4ce928bb0a327b97b6f9640fd0a60f677351a4d81b">CRCL_Ready</a>
+ }</td></tr>
+<tr class="separator:a2198caebc66c8e9388a3a2d4ce928bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90f9e27709a6261158c1a1708ff7cf73"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a90f9e27709a6261158c1a1708ff7cf73">CrclReturn</a> { <br />
+&#160;&#160;<a class="el" href="namespacecrcl.html#a90f9e27709a6261158c1a1708ff7cf73ae1cf222dff743657ada18ab8d33098c3">CANON_REJECT</a> = -2, 
+<a class="el" href="namespacecrcl.html#a90f9e27709a6261158c1a1708ff7cf73af79c1488838b8e7c5c71104778801d39">CANON_FAILURE</a> = -1, 
+<a class="el" href="namespacecrcl.html#a90f9e27709a6261158c1a1708ff7cf73a996159b5256a1b32348fb81d8629b9ce">CANON_SUCCESS</a> = 0, 
+<a class="el" href="namespacecrcl.html#a90f9e27709a6261158c1a1708ff7cf73a087f4739d3101c4067f5e7d03584c301">CANON_STATUSREPLY</a> = 1, 
+<br />
+&#160;&#160;<a class="el" href="namespacecrcl.html#a90f9e27709a6261158c1a1708ff7cf73a3fa4ddc8291b118845d66b15a5139a5a">CANON_MOTION</a> = 2, 
+<a class="el" href="namespacecrcl.html#a90f9e27709a6261158c1a1708ff7cf73a98b9f0cc088fc801c5e4f2c7979603bb">CANON_RUNNING</a>, 
+<a class="el" href="namespacecrcl.html#a90f9e27709a6261158c1a1708ff7cf73afae205951f3dbc0c88d233d023c79bcd">CANON_NOT_IMPLEMENTED</a>
+<br />
+ }</td></tr>
+<tr class="separator:a90f9e27709a6261158c1a1708ff7cf73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a72165458d4bf044bdf0941c8e2f5a759"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a72165458d4bf044bdf0941c8e2f5a759">ConvertToPositionVector</a> (<a class="el" href="namespacecrcl.html#a542d9e42ff68794f610a6c6c95a8e7e6">ActuatorJointSequence</a> &amp;, double dConversion)</td></tr>
+<tr class="memdesc:a72165458d4bf044bdf0941c8e2f5a759"><td class="mdescLeft">&#160;</td><td class="mdescRight">ConvertToPositionVector converts codesynthesis actuator sequence into std vector of position as doubles.  <a href="#a72165458d4bf044bdf0941c8e2f5a759">More...</a><br /></td></tr>
+<tr class="separator:a72165458d4bf044bdf0941c8e2f5a759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7070b2ee7735b733775bb7da7fe6ee43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecrcl.html#a234e370ffce3264b10aa61862b599ad6">JointStatusSequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a7070b2ee7735b733775bb7da7fe6ee43">Convert</a> (<a class="el" href="namespacecrcl.html#a542d9e42ff68794f610a6c6c95a8e7e6">ActuatorJointSequence</a> jin)</td></tr>
+<tr class="memdesc:a7070b2ee7735b733775bb7da7fe6ee43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert converts codesynthesis commanded actuator joint sequence into status actuator joint sequence .  <a href="#a7070b2ee7735b733775bb7da7fe6ee43">More...</a><br /></td></tr>
+<tr class="separator:a7070b2ee7735b733775bb7da7fe6ee43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a580769fe7be1bc69e3b80fa756b75434"><td class="memItemLeft" align="right" valign="top">sensor_msgs::JointState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a580769fe7be1bc69e3b80fa756b75434">Convert</a> (<a class="el" href="namespacecrcl.html#a234e370ffce3264b10aa61862b599ad6">crcl::JointStatusSequence</a> jointStatusSeq, double angleConversion=1.0)</td></tr>
+<tr class="memdesc:a580769fe7be1bc69e3b80fa756b75434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert converts codesynthesis status actuator joint sequence into ROS JointState.(Fills position).  <a href="#a580769fe7be1bc69e3b80fa756b75434">More...</a><br /></td></tr>
+<tr class="separator:a580769fe7be1bc69e3b80fa756b75434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f4c7b39c27d52b14490498946108a76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecrcl.html#a234e370ffce3264b10aa61862b599ad6">crcl::JointStatusSequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a4f4c7b39c27d52b14490498946108a76">Convert</a> (sensor_msgs::JointState joints)</td></tr>
+<tr class="memdesc:a4f4c7b39c27d52b14490498946108a76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert converts ROS JointState (primarily position for now) and creates codesynthesis status actuator joint sequence.  <a href="#a4f4c7b39c27d52b14490498946108a76">More...</a><br /></td></tr>
+<tr class="separator:a4f4c7b39c27d52b14490498946108a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f1467260604e121c8248cb8c1982edf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a0f1467260604e121c8248cb8c1982edf">Convert</a> (tf::Pose pose)</td></tr>
+<tr class="memdesc:a0f1467260604e121c8248cb8c1982edf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert converts ROS/RCS pose into codesynthesis <a class="el" href="namespaceCrcl.html">Crcl</a> Pose. Note, no angle conversion - rotation/orientation always in radians.  <a href="#a0f1467260604e121c8248cb8c1982edf">More...</a><br /></td></tr>
+<tr class="separator:a0f1467260604e121c8248cb8c1982edf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbd3ff69a9de5649204def6d00ffce91"><td class="memItemLeft" align="right" valign="top">tf::Pose&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#afbd3ff69a9de5649204def6d00ffce91">Convert</a> (<a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a> &amp;pose, double lengthConversion=1.0)</td></tr>
+<tr class="memdesc:afbd3ff69a9de5649204def6d00ffce91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert converts codesynthesis <a class="el" href="namespaceCrcl.html">Crcl</a> Pose into ROS/RCS pose using length conversion . Note, no angle conversion - rotation/orientation always in radians.  <a href="#afbd3ff69a9de5649204def6d00ffce91">More...</a><br /></td></tr>
+<tr class="separator:afbd3ff69a9de5649204def6d00ffce91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6b4f0021f22799d78ee5b47827ee5a0"><td class="memItemLeft" align="right" valign="top">tf::Quaternion&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#ad6b4f0021f22799d78ee5b47827ee5a0">Convert</a> (tf::Vector3 Xrot, tf::Vector3 Zrot)</td></tr>
+<tr class="memdesc:ad6b4f0021f22799d78ee5b47827ee5a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert converts codesynthesis <a class="el" href="namespaceCrcl.html">Crcl</a> rotation (as x,z rotation vectors) into ROS/RCS rotation.  <a href="#ad6b4f0021f22799d78ee5b47827ee5a0">More...</a><br /></td></tr>
+<tr class="separator:ad6b4f0021f22799d78ee5b47827ee5a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaa0292a4dd7bac502c2aef542b2e959"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#adaa0292a4dd7bac502c2aef542b2e959">GetPoseToRPY</a> (<a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a> &amp;pose, double &amp;dRoll, double &amp;dPitch, double &amp;dYaw)</td></tr>
+<tr class="memdesc:adaa0292a4dd7bac502c2aef542b2e959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get roll,pitch,yaw orientation from codesynthesis <a class="el" href="namespaceCrcl.html">Crcl</a> pose.  <a href="#adaa0292a4dd7bac502c2aef542b2e959">More...</a><br /></td></tr>
+<tr class="separator:adaa0292a4dd7bac502c2aef542b2e959"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac74fdfa8299984490b8dfdce1438e874"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRCS_1_1PoseTolerance.html">RCS::PoseTolerance</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#ac74fdfa8299984490b8dfdce1438e874">Convert</a> (<a class="el" href="namespacecrcl.html#a48654502e6d69ac723d72d97446e0df8">crcl::PoseToleranceType</a>)</td></tr>
+<tr class="separator:ac74fdfa8299984490b8dfdce1438e874"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb87761b3e00b4871518b1542228f81a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#aeb87761b3e00b4871518b1542228f81a">DumpPosition</a> (<a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a> pose, std::string separator=&quot;,&quot;)</td></tr>
+<tr class="memdesc:aeb87761b3e00b4871518b1542228f81a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump contents of codesynthesis <a class="el" href="namespaceCrcl.html">Crcl</a> pose.  <a href="#aeb87761b3e00b4871518b1542228f81a">More...</a><br /></td></tr>
+<tr class="separator:aeb87761b3e00b4871518b1542228f81a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a507436c78c00bb1e7ad697261f6829cb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a507436c78c00bb1e7ad697261f6829cb">DumpRotationAsCrcl</a> (tf::Pose rcspose, std::string separator=&quot;,&quot;)</td></tr>
+<tr class="separator:a507436c78c00bb1e7ad697261f6829cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae17898b4b5d679fbcad38908e53c5d8f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#ae17898b4b5d679fbcad38908e53c5d8f">DumpRotationAsCrcl</a> (<a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a> crclpose, std::string separator=&quot;,&quot;)</td></tr>
+<tr class="separator:ae17898b4b5d679fbcad38908e53c5d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63cf84585e6aa37c26f8cdabee67accf"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a63cf84585e6aa37c26f8cdabee67accf">DumpPose</a> (<a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a> pose, std::string separator=&quot;,&quot;)</td></tr>
+<tr class="separator:a63cf84585e6aa37c26f8cdabee67accf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b325283aaa02e1bbc5a0ccfafcf731c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a6b325283aaa02e1bbc5a0ccfafcf731c">DumpStatusReply</a> (<a class="el" href="structcrcl_1_1CrclStatus.html">crcl::CrclStatus</a> *wm)</td></tr>
+<tr class="separator:a6b325283aaa02e1bbc5a0ccfafcf731c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6015c7171e111c9270e10e0f01d94427"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a6015c7171e111c9270e10e0f01d94427">DumpCrclCommand</a> (::CRCLCommandType &amp;crclCommand)</td></tr>
+<tr class="separator:a6015c7171e111c9270e10e0f01d94427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3fda345c2444265315e43c3c1d9153e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#ac3fda345c2444265315e43c3c1d9153e">DumpCrclJoints</a> (<a class="el" href="namespacecrcl.html#a234e370ffce3264b10aa61862b599ad6">crcl::JointStatusSequence</a>)</td></tr>
+<tr class="separator:ac3fda345c2444265315e43c3c1d9153e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab618f4c29ef090af20291f59bb7e9dde"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">PoseType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#ab618f4c29ef090af20291f59bb7e9dde">PoseHome</a> ()</td></tr>
+<tr class="memdesc:ab618f4c29ef090af20291f59bb7e9dde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create codesynthesis <a class="el" href="namespaceCrcl.html">Crcl</a> pose that is necessary for all codesynthesis <a class="el" href="namespaceCrcl.html">Crcl</a> pose constructors.  <a href="#ab618f4c29ef090af20291f59bb7e9dde">More...</a><br /></td></tr>
+<tr class="separator:ab618f4c29ef090af20291f59bb7e9dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8d5c8599000a30139ca9007b258726f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#ad8d5c8599000a30139ca9007b258726f">NullPose</a> ()</td></tr>
+<tr class="separator:ad8d5c8599000a30139ca9007b258726f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa75be5f3f6c5af0c904ebbe192926fa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#aa75be5f3f6c5af0c904ebbe192926fa4">configure</a> (ros::NodeHandle *nh, std::string ns)</td></tr>
+<tr class="memdesc:aa75be5f3f6c5af0c904ebbe192926fa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">configure  <a href="#aa75be5f3f6c5af0c904ebbe192926fa4">More...</a><br /></td></tr>
+<tr class="separator:aa75be5f3f6c5af0c904ebbe192926fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75b306028c890a4cafe2e7f776c98530"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a75b306028c890a4cafe2e7f776c98530">printConfiguration</a> ()</td></tr>
+<tr class="separator:a75b306028c890a4cafe2e7f776c98530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7e3b6fad08e81f266c4c002800061d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#aa7e3b6fad08e81f266c4c002800061d0">GetRPY</a> (tf::Vector3 Xrot, tf::Vector3 Zrot, double &amp;dRoll, double &amp;dPitch, double &amp;dYaw)</td></tr>
+<tr class="separator:aa7e3b6fad08e81f266c4c002800061d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76e36c92c1a7dead660c65b38c4094fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecrcl.html#adbec863ca3a527aedf065381e727b292">crcl::VectorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a76e36c92c1a7dead660c65b38c4094fa">VectorZero</a> ()</td></tr>
+<tr class="separator:a76e36c92c1a7dead660c65b38c4094fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa70641d9f59ad763d533da4767e54ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#afa70641d9f59ad763d533da4767e54ca">IdentityPose</a> ()</td></tr>
+<tr class="separator:afa70641d9f59ad763d533da4767e54ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39bccced583d014b3b0670166fa4d47b"><td class="memItemLeft" align="right" valign="top">tf::Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a39bccced583d014b3b0670166fa4d47b">GetVector3D</a> (<a class="el" href="namespacecrcl.html#adbec863ca3a527aedf065381e727b292">crcl::VectorType</a> &amp;vector)</td></tr>
+<tr class="separator:a39bccced583d014b3b0670166fa4d47b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1384eb1a03bbd5b953a30c85644c14df"><td class="memItemLeft" align="right" valign="top">tf::Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a1384eb1a03bbd5b953a30c85644c14df">GetVector3D</a> (<a class="el" href="namespacecrcl.html#a8391f66869c99eef4852b5b70a034261">crcl::PointType</a> &amp;point)</td></tr>
+<tr class="separator:a1384eb1a03bbd5b953a30c85644c14df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27f13eac77632fc335c150b377243aab"><td class="memItemLeft" align="right" valign="top">tf::Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a27f13eac77632fc335c150b377243aab">GetTfVector</a> (<a class="el" href="namespacecrcl.html#a8391f66869c99eef4852b5b70a034261">crcl::PointType</a> &amp;point)</td></tr>
+<tr class="separator:a27f13eac77632fc335c150b377243aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f29e35226fbad53baaa46dfda2cc628"><td class="memItemLeft" align="right" valign="top">tf::Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a4f29e35226fbad53baaa46dfda2cc628">GetTfVector</a> (<a class="el" href="namespacecrcl.html#adbec863ca3a527aedf065381e727b292">crcl::VectorType</a> &amp;vector)</td></tr>
+<tr class="separator:a4f29e35226fbad53baaa46dfda2cc628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2393e83aa841bf4f0df1352f4bbecc9c"><td class="memItemLeft" align="right" valign="top">inline::PointType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a2393e83aa841bf4f0df1352f4bbecc9c">GetPoint</a> (tf::Vector3 &amp;point)</td></tr>
+<tr class="separator:a2393e83aa841bf4f0df1352f4bbecc9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5006091cdaffb61fa9fa725a9fe09310"><td class="memItemLeft" align="right" valign="top">inline::VectorType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a5006091cdaffb61fa9fa725a9fe09310">GetVector</a> (tf::Vector3 &amp;point)</td></tr>
+<tr class="separator:a5006091cdaffb61fa9fa725a9fe09310"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09d8249d4f9076f45a09c57495c6c51b"><td class="memItemLeft" align="right" valign="top">tf::Matrix3x3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a09d8249d4f9076f45a09c57495c6c51b">GetTfRotMatrix</a> (tf::Vector3 Xrot, tf::Vector3 Zrot)</td></tr>
+<tr class="separator:a09d8249d4f9076f45a09c57495c6c51b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a973d73345234b3724b1800137cb758dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecrcl.html#a234e370ffce3264b10aa61862b599ad6">crcl::JointStatusSequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a973d73345234b3724b1800137cb758dc">Convert</a> (sensor_msgs::JointState joints, double _angleConversion)</td></tr>
+<tr class="separator:a973d73345234b3724b1800137cb758dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1934522f983b71c65bdf3638bac60b4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecrcl.html#a234e370ffce3264b10aa61862b599ad6">JointStatusSequence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a1934522f983b71c65bdf3638bac60b4a">Convert</a> (<a class="el" href="namespacecrcl.html#a542d9e42ff68794f610a6c6c95a8e7e6">crcl::ActuatorJointSequence</a> joints, double _angleConversion)</td></tr>
+<tr class="separator:a1934522f983b71c65bdf3638bac60b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace94630bcdd87cc94128212b561b3e72"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#ace94630bcdd87cc94128212b561b3e72">ConvertToAnglePositionVector</a> (<a class="el" href="namespacecrcl.html#a542d9e42ff68794f610a6c6c95a8e7e6">crcl::ActuatorJointSequence</a> &amp;joints, double dAngleConversion)</td></tr>
+<tr class="separator:ace94630bcdd87cc94128212b561b3e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a0049bfc90d7a970d0924ac872e59b7a4"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a0049bfc90d7a970d0924ac872e59b7a4">mutex</a></td></tr>
+<tr class="separator:a0049bfc90d7a970d0924ac872e59b7a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0604b7e64f711dfbb46c480cadb69c90"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a0604b7e64f711dfbb46c480cadb69c90">crclIp</a></td></tr>
+<tr class="separator:a0604b7e64f711dfbb46c480cadb69c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02814c72ebde9d5aaf6aa6f47176b331"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a02814c72ebde9d5aaf6aa6f47176b331">crclPort</a></td></tr>
+<tr class="separator:a02814c72ebde9d5aaf6aa6f47176b331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1c30380c59b46251d921551b43468f0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#ab1c30380c59b46251d921551b43468f0">dbgCrclCommand</a></td></tr>
+<tr class="separator:ab1c30380c59b46251d921551b43468f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2439ccffebcafb6fff3d85f0519ae97c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a2439ccffebcafb6fff3d85f0519ae97c">dbgCrclStatus</a></td></tr>
+<tr class="separator:a2439ccffebcafb6fff3d85f0519ae97c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d5dfedda85315a35cf24cd352d4a255"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a1d5dfedda85315a35cf24cd352d4a255">dbgCrclStatusMsg</a></td></tr>
+<tr class="separator:a1d5dfedda85315a35cf24cd352d4a255"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af02a6e5fdde5aafcaa5a3ff5be68e837"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#af02a6e5fdde5aafcaa5a3ff5be68e837">dbgCrclCommandMsg</a></td></tr>
+<tr class="separator:af02a6e5fdde5aafcaa5a3ff5be68e837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a574e03531031c5162ba3ac0ad5816e3e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a574e03531031c5162ba3ac0ad5816e3e">bDebug</a></td></tr>
+<tr class="separator:a574e03531031c5162ba3ac0ad5816e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a576917cf0a94ec83907b6bd58bd4405b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a576917cf0a94ec83907b6bd58bd4405b">bCrclStopIgnore</a></td></tr>
+<tr class="separator:a576917cf0a94ec83907b6bd58bd4405b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40f3814c275898cbd23e164a29aadc8a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a40f3814c275898cbd23e164a29aadc8a">bFlywheel</a></td></tr>
+<tr class="separator:a40f3814c275898cbd23e164a29aadc8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b05b03b405a3e5b5829be5d567fdf28"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a7b05b03b405a3e5b5829be5d567fdf28">bProcessAllCrclMessages</a></td></tr>
+<tr class="memdesc:a7b05b03b405a3e5b5829be5d567fdf28"><td class="mdescLeft">&#160;</td><td class="mdescRight">processing one queued crcl message until done  <a href="#a7b05b03b405a3e5b5829be5d567fdf28">More...</a><br /></td></tr>
+<tr class="separator:a7b05b03b405a3e5b5829be5d567fdf28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2af02b589e4b9cc99257104734d3444a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a2af02b589e4b9cc99257104734d3444a">bAutoCrclStatus</a></td></tr>
+<tr class="memdesc:a2af02b589e4b9cc99257104734d3444a"><td class="mdescLeft">&#160;</td><td class="mdescRight">process all crcl message until done  <a href="#a2af02b589e4b9cc99257104734d3444a">More...</a><br /></td></tr>
+<tr class="separator:a2af02b589e4b9cc99257104734d3444a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60d9e772a61af8a0802b290a12547ed6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a60d9e772a61af8a0802b290a12547ed6">bSynchronousCmds</a></td></tr>
+<tr class="separator:a60d9e772a61af8a0802b290a12547ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24e72169af3acc964852f08365cc798a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classcrcl_1_1CSocketSession.html">crcl::CSocketSession</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a24e72169af3acc964852f08365cc798a">crclCommServer</a></td></tr>
+<tr class="separator:a24e72169af3acc964852f08365cc798a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fb92a07c671a64a06ccab87b1e054ac"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classcrcl_1_1CRosCmdStatusHandler.html">crcl::CRosCmdStatusHandler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a8fb92a07c671a64a06ccab87b1e054ac">rosCmdStatMsgHandler</a></td></tr>
+<tr class="memdesc:a8fb92a07c671a64a06ccab87b1e054ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">crcl socket server  <a href="#a8fb92a07c671a64a06ccab87b1e054ac">More...</a><br /></td></tr>
+<tr class="separator:a8fb92a07c671a64a06ccab87b1e054ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0883d771bb00738c55364fcc0d03e5fb"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classcrcl_1_1CRosCmdMsgHandler.html">crcl::CRosCmdMsgHandler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#a0883d771bb00738c55364fcc0d03e5fb">rosCmdMsgHandler</a></td></tr>
+<tr class="separator:a0883d771bb00738c55364fcc0d03e5fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec2ddbfcf8c922408a168a542623c038"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classcrcl_1_1CRobotImpl.html">crcl::CRobotImpl</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#aec2ddbfcf8c922408a168a542623c038">crclRobotImpl</a></td></tr>
+<tr class="separator:aec2ddbfcf8c922408a168a542623c038"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab972af3c26514d0b2474606edb08a0a3"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classcrcl_1_1CCrcl2RosMsgApi.html">crcl::CCrcl2RosMsgApi</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrcl.html#ab972af3c26514d0b2474606edb08a0a3">crclApi</a></td></tr>
+<tr class="separator:ab972af3c26514d0b2474606edb08a0a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This file relies on numerous conversion routines to translate CRCL representation into ROS representation. It includes translating XML command types into ROS message enumerations. Most all of the different CRCL XML possibilities are grouped into one message union that uses enumerations and intuition (!) to understand what union members are required for which enumerated commands. Included in this file are API to map CRCL commands into ROS message. </p>
-</div></div><!-- contents -->
+<div class="textblock"><p>ROS topic handling. </p>
+<p><a class="el" href="RosMsgHandler_8h.html">RosMsgHandler.h</a>.</p>
+<p>These class and routines are for representation, conversion to/from CRCL to ROS tf.</p>
+<p>the CRCL data structures are based on the CodeSynthesis generation of C++ header/source from the CRCL XSD. For example <a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">PoseType</a> is mapped into <a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a>. THis in turn has conversion to/from tf::Pose.</p>
+<p>Likewise ROS sensor_msgs::JointState is mapped into CodeSynthesis ::JointStatusesType::JointStatus_sequence which is mapped into CRCL <a class="el" href="namespacecrcl.html#a234e370ffce3264b10aa61862b599ad6">crcl::JointStatusSequence</a>.</p>
+<p>This file relies on numerous conversion routines to translate CRCL representation into ROS representation. It includes translating XML command types into ROS message enumerations. Most all of the different CRCL XML possibilities are grouped into one message union that uses enumerations and intuition (!) to understand what union members are required for which enumerated commands. Included in this file are API to map CRCL commands into ROS message. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a542d9e42ff68794f610a6c6c95a8e7e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef ::ActuateJointsType::ActuateJoint_sequence <a class="el" href="namespacecrcl.html#a542d9e42ff68794f610a6c6c95a8e7e6">crcl::ActuatorJointSequence</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae796e3ad843979f55c4f725cfd8e274f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classRCS_1_1CMessageQueue.html">RCS::CMessageQueue</a>&lt;<a class="el" href="namespacecrcl.html#a2199ca6fed671d03d3464e66e9ad0435">CrclMessage</a>&gt; <a class="el" href="namespacecrcl.html#ae796e3ad843979f55c4f725cfd8e274f">crcl::CCrclMessages</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3473fe7188663d8e979d2fa66bafb99f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classRCS_1_1CMessageQueue.html">RCS::CMessageQueue</a>&lt;<a class="el" href="namespacecrcl.html#a2199ca6fed671d03d3464e66e9ad0435">CrclMessage</a>&gt; <a class="el" href="namespacecrcl.html#a3473fe7188663d8e979d2fa66bafb99f">crcl::CMessageQueue</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0161adc06ae3acb0709b05d8931cbc80"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef::CommandStateEnumType <a class="el" href="namespacecrcl.html#a0161adc06ae3acb0709b05d8931cbc80">crcl::CommandStateEnum</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2199ca6fed671d03d3464e66e9ad0435"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::tuple&lt;std::string, <a class="el" href="classcrcl_1_1CSocketSession.html">CSocketSession</a> *&gt; <a class="el" href="namespacecrcl.html#a2199ca6fed671d03d3464e66e9ad0435">crcl::CrclMessage</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af45e0ffb9192ccfd1c41261da7f5f4c4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef ::JointStatusType <a class="el" href="namespacecrcl.html#af45e0ffb9192ccfd1c41261da7f5f4c4">crcl::JointStatus</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a234e370ffce3264b10aa61862b599ad6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef ::JointStatusesType::JointStatus_sequence <a class="el" href="namespacecrcl.html#a234e370ffce3264b10aa61862b599ad6">crcl::JointStatusSequence</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8391f66869c99eef4852b5b70a034261"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef ::<a class="el" href="namespacecrcl.html#a8391f66869c99eef4852b5b70a034261">PointType</a> <a class="el" href="namespacecrcl.html#a8391f66869c99eef4852b5b70a034261">crcl::PointType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a48654502e6d69ac723d72d97446e0df8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef ::<a class="el" href="namespacecrcl.html#a48654502e6d69ac723d72d97446e0df8">PoseToleranceType</a> <a class="el" href="namespacecrcl.html#a48654502e6d69ac723d72d97446e0df8">crcl::PoseToleranceType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7ccdcbba9b2301029abca2a51990838e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef ::<a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">PoseType</a> <a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2d0863eafb30c6e5be4a3b9af73a6b9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef tf::Vector3 <a class="el" href="namespacecrcl.html#a2d0863eafb30c6e5be4a3b9af73a6b9c">crcl::Vector3D</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adbec863ca3a527aedf065381e727b292"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef ::<a class="el" href="namespacecrcl.html#adbec863ca3a527aedf065381e727b292">VectorType</a> <a class="el" href="namespacecrcl.html#adbec863ca3a527aedf065381e727b292">crcl::VectorType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="a2198caebc66c8e9388a3a2d4ce928bb0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacecrcl.html#a2198caebc66c8e9388a3a2d4ce928bb0">crcl::CRCLCmdStatus</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a2198caebc66c8e9388a3a2d4ce928bb0ab7a48e2b528c9e249953119eecb13caa"></a>CRCL_Done&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a2198caebc66c8e9388a3a2d4ce928bb0a004cc0f6cb116431a42aafef167b0957"></a>CRCL_Error&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a2198caebc66c8e9388a3a2d4ce928bb0ae14bf250fe2b5b8f0d4e4e2441dadc8d"></a>CRCL_Working&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a2198caebc66c8e9388a3a2d4ce928bb0a327b97b6f9640fd0a60f677351a4d81b"></a>CRCL_Ready&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<a class="anchor" id="a90f9e27709a6261158c1a1708ff7cf73"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacecrcl.html#a90f9e27709a6261158c1a1708ff7cf73">crcl::CrclReturn</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a90f9e27709a6261158c1a1708ff7cf73ae1cf222dff743657ada18ab8d33098c3"></a>CANON_REJECT&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a90f9e27709a6261158c1a1708ff7cf73af79c1488838b8e7c5c71104778801d39"></a>CANON_FAILURE&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a90f9e27709a6261158c1a1708ff7cf73a996159b5256a1b32348fb81d8629b9ce"></a>CANON_SUCCESS&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a90f9e27709a6261158c1a1708ff7cf73a087f4739d3101c4067f5e7d03584c301"></a>CANON_STATUSREPLY&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a90f9e27709a6261158c1a1708ff7cf73a3fa4ddc8291b118845d66b15a5139a5a"></a>CANON_MOTION&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a90f9e27709a6261158c1a1708ff7cf73a98b9f0cc088fc801c5e4f2c7979603bb"></a>CANON_RUNNING&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a90f9e27709a6261158c1a1708ff7cf73afae205951f3dbc0c88d233d023c79bcd"></a>CANON_NOT_IMPLEMENTED&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="aa75be5f3f6c5af0c904ebbe192926fa4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void crcl::configure </td>
+          <td>(</td>
+          <td class="paramtype">ros::NodeHandle *&#160;</td>
+          <td class="paramname"><em>nh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>ns</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>configure </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nh</td><td>node handle for ROS </td></tr>
+    <tr><td class="paramname">ns</td><td>namespace used for this crclapp defining robot </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7070b2ee7735b733775bb7da7fe6ee43"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecrcl.html#a234e370ffce3264b10aa61862b599ad6">JointStatusSequence</a> crcl::Convert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecrcl.html#a542d9e42ff68794f610a6c6c95a8e7e6">ActuatorJointSequence</a>&#160;</td>
+          <td class="paramname"><em>jin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert converts codesynthesis commanded actuator joint sequence into status actuator joint sequence . </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codesynthesis</td><td>sequence of commanded joints. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>codesynthesis sequence of status joints. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a580769fe7be1bc69e3b80fa756b75434"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sensor_msgs::JointState crcl::Convert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecrcl.html#a234e370ffce3264b10aa61862b599ad6">crcl::JointStatusSequence</a>&#160;</td>
+          <td class="paramname"><em>jointStatusSeq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>angleConversion</em> = <code>1.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert converts codesynthesis status actuator joint sequence into ROS JointState.(Fills position). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codesynthesis</td><td>sequence of status joints. </td></tr>
+    <tr><td class="paramname">conversion</td><td>factor for each joint (e.g., degree to radian). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ROS JointState with Joint positions filled. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4f4c7b39c27d52b14490498946108a76"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecrcl.html#a234e370ffce3264b10aa61862b599ad6">crcl::JointStatusSequence</a> crcl::Convert </td>
+          <td>(</td>
+          <td class="paramtype">sensor_msgs::JointState&#160;</td>
+          <td class="paramname"><em>joints</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert converts ROS JointState (primarily position for now) and creates codesynthesis status actuator joint sequence. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ROS</td><td>JointState with Joint positions filled. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>codesynthesis sequence of status joints. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0f1467260604e121c8248cb8c1982edf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a> crcl::Convert </td>
+          <td>(</td>
+          <td class="paramtype">tf::Pose&#160;</td>
+          <td class="paramname"><em>pose</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert converts ROS/RCS pose into codesynthesis <a class="el" href="namespaceCrcl.html">Crcl</a> Pose. Note, no angle conversion - rotation/orientation always in radians. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ROS/RCS</td><td>pose. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>codesynthesis CRCL pose type. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afbd3ff69a9de5649204def6d00ffce91"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">tf::Pose crcl::Convert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a> &amp;&#160;</td>
+          <td class="paramname"><em>pose</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lengthConversion</em> = <code>1.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert converts codesynthesis <a class="el" href="namespaceCrcl.html">Crcl</a> Pose into ROS/RCS pose using length conversion . Note, no angle conversion - rotation/orientation always in radians. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codesynthesis</td><td>CRCL pose type. </td></tr>
+    <tr><td class="paramname">lengthConversion</td><td>to make length in meters. (e.g., if mm input, conversion = 0.001). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ROS/RCS pose. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad6b4f0021f22799d78ee5b47827ee5a0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">tf::Quaternion crcl::Convert </td>
+          <td>(</td>
+          <td class="paramtype">tf::Vector3&#160;</td>
+          <td class="paramname"><em>Xrot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">tf::Vector3&#160;</td>
+          <td class="paramname"><em>Zrot</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert converts codesynthesis <a class="el" href="namespaceCrcl.html">Crcl</a> rotation (as x,z rotation vectors) into ROS/RCS rotation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codesynthesis</td><td>CRCL x,z rotation vectors as used in pose. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ROS/RCS rotation. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac74fdfa8299984490b8dfdce1438e874"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structRCS_1_1PoseTolerance.html">RCS::PoseTolerance</a> crcl::Convert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecrcl.html#a48654502e6d69ac723d72d97446e0df8">crcl::PoseToleranceType</a>&#160;</td>
+          <td class="paramname"><em>tolerance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a973d73345234b3724b1800137cb758dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecrcl.html#a234e370ffce3264b10aa61862b599ad6">crcl::JointStatusSequence</a> crcl::Convert </td>
+          <td>(</td>
+          <td class="paramtype">sensor_msgs::JointState&#160;</td>
+          <td class="paramname"><em>joints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>_angleConversion</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1934522f983b71c65bdf3638bac60b4a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecrcl.html#a234e370ffce3264b10aa61862b599ad6">JointStatusSequence</a> crcl::Convert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecrcl.html#a542d9e42ff68794f610a6c6c95a8e7e6">crcl::ActuatorJointSequence</a>&#160;</td>
+          <td class="paramname"><em>joints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>_angleConversion</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ace94630bcdd87cc94128212b561b3e72"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double&gt; crcl::ConvertToAnglePositionVector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecrcl.html#a542d9e42ff68794f610a6c6c95a8e7e6">crcl::ActuatorJointSequence</a> &amp;&#160;</td>
+          <td class="paramname"><em>joints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dAngleConversion</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a72165458d4bf044bdf0941c8e2f5a759"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double&gt; crcl::ConvertToPositionVector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecrcl.html#a542d9e42ff68794f610a6c6c95a8e7e6">ActuatorJointSequence</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dConversion</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ConvertToPositionVector converts codesynthesis actuator sequence into std vector of position as doubles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codesynthesis</td><td>sequence of joints. </td></tr>
+    <tr><td class="paramname">conversion</td><td>factor for each joint (e.g., degree to radian). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std vector of doubles representing position. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6015c7171e111c9270e10e0f01d94427"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string crcl::DumpCrclCommand </td>
+          <td>(</td>
+          <td class="paramtype">::CRCLCommandType &amp;&#160;</td>
+          <td class="paramname"><em>crclCommand</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac3fda345c2444265315e43c3c1d9153e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string crcl::DumpCrclJoints </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecrcl.html#a234e370ffce3264b10aa61862b599ad6">crcl::JointStatusSequence</a>&#160;</td>
+          <td class="paramname"><em>jin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a63cf84585e6aa37c26f8cdabee67accf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string crcl::DumpPose </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a>&#160;</td>
+          <td class="paramname"><em>pose</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>separator</em> = <code>&quot;,&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeb87761b3e00b4871518b1542228f81a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string crcl::DumpPosition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a>&#160;</td>
+          <td class="paramname"><em>pose</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>separator</em> = <code>&quot;,&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dump contents of codesynthesis <a class="el" href="namespaceCrcl.html">Crcl</a> pose. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codesynthesis</td><td>CRCL pose. </td></tr>
+    <tr><td class="paramname">separator</td><td>defines character to use a separater between values (e.g., "," for csv). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>string with <a class="el" href="namespaceCrcl.html">Crcl</a> pose contents. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a507436c78c00bb1e7ad697261f6829cb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string crcl::DumpRotationAsCrcl </td>
+          <td>(</td>
+          <td class="paramtype">tf::Pose&#160;</td>
+          <td class="paramname"><em>rcspose</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>separator</em> = <code>&quot;,&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae17898b4b5d679fbcad38908e53c5d8f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string crcl::DumpRotationAsCrcl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a>&#160;</td>
+          <td class="paramname"><em>crclpose</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>separator</em> = <code>&quot;,&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6b325283aaa02e1bbc5a0ccfafcf731c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string crcl::DumpStatusReply </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcrcl_1_1CrclStatus.html">crcl::CrclStatus</a> *&#160;</td>
+          <td class="paramname"><em>wm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2393e83aa841bf4f0df1352f4bbecc9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">inline ::<a class="el" href="namespacecrcl.html#a8391f66869c99eef4852b5b70a034261">PointType</a> crcl::GetPoint </td>
+          <td>(</td>
+          <td class="paramtype">tf::Vector3 &amp;&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adaa0292a4dd7bac502c2aef542b2e959"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool crcl::GetPoseToRPY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a> &amp;&#160;</td>
+          <td class="paramname"><em>pose</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>dRoll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>dPitch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>dYaw</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get roll,pitch,yaw orientation from codesynthesis <a class="el" href="namespaceCrcl.html">Crcl</a> pose. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codesynthesis</td><td>CRCL pose. </td></tr>
+    <tr><td class="paramname">roll,pitch,yaw</td><td>reference to doubles that will be filled with angles in radians. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if sucessful, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa7e3b6fad08e81f266c4c002800061d0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool crcl::GetRPY </td>
+          <td>(</td>
+          <td class="paramtype">tf::Vector3&#160;</td>
+          <td class="paramname"><em>Xrot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">tf::Vector3&#160;</td>
+          <td class="paramname"><em>Zrot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>dRoll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>dPitch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>dYaw</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a09d8249d4f9076f45a09c57495c6c51b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">tf::Matrix3x3 crcl::GetTfRotMatrix </td>
+          <td>(</td>
+          <td class="paramtype">tf::Vector3&#160;</td>
+          <td class="paramname"><em>Xrot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">tf::Vector3&#160;</td>
+          <td class="paramname"><em>Zrot</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a27f13eac77632fc335c150b377243aab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tf::Vector3 crcl::GetTfVector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecrcl.html#a8391f66869c99eef4852b5b70a034261">crcl::PointType</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4f29e35226fbad53baaa46dfda2cc628"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tf::Vector3 crcl::GetTfVector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecrcl.html#adbec863ca3a527aedf065381e727b292">crcl::VectorType</a> &amp;&#160;</td>
+          <td class="paramname"><em>vector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5006091cdaffb61fa9fa725a9fe09310"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">inline ::<a class="el" href="namespacecrcl.html#adbec863ca3a527aedf065381e727b292">VectorType</a> crcl::GetVector </td>
+          <td>(</td>
+          <td class="paramtype">tf::Vector3 &amp;&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a39bccced583d014b3b0670166fa4d47b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tf::Vector3 crcl::GetVector3D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecrcl.html#adbec863ca3a527aedf065381e727b292">crcl::VectorType</a> &amp;&#160;</td>
+          <td class="paramname"><em>vector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1384eb1a03bbd5b953a30c85644c14df"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tf::Vector3 crcl::GetVector3D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecrcl.html#a8391f66869c99eef4852b5b70a034261">crcl::PointType</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afa70641d9f59ad763d533da4767e54ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a> crcl::IdentityPose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad8d5c8599000a30139ca9007b258726f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a> crcl::NullPose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab618f4c29ef090af20291f59bb7e9dde"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecrcl.html#a7ccdcbba9b2301029abca2a51990838e">crcl::PoseType</a> crcl::PoseHome </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create codesynthesis <a class="el" href="namespaceCrcl.html">Crcl</a> pose that is necessary for all codesynthesis <a class="el" href="namespaceCrcl.html">Crcl</a> pose constructors. </p>
+<dl class="section return"><dt>Returns</dt><dd>empty codesynthesis <a class="el" href="namespaceCrcl.html">Crcl</a> pose. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a75b306028c890a4cafe2e7f776c98530"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void crcl::printConfiguration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a76e36c92c1a7dead660c65b38c4094fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecrcl.html#adbec863ca3a527aedf065381e727b292">crcl::VectorType</a> crcl::VectorZero </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a2af02b589e4b9cc99257104734d3444a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int crcl::bAutoCrclStatus</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>process all crcl message until done </p>
+
+</div>
+</div>
+<a class="anchor" id="a576917cf0a94ec83907b6bd58bd4405b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int crcl::bCrclStopIgnore</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a574e03531031c5162ba3ac0ad5816e3e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int crcl::bDebug</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a40f3814c275898cbd23e164a29aadc8a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int crcl::bFlywheel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7b05b03b405a3e5b5829be5d567fdf28"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int crcl::bProcessAllCrclMessages</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>processing one queued crcl message until done </p>
+
+</div>
+</div>
+<a class="anchor" id="a60d9e772a61af8a0802b290a12547ed6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int crcl::bSynchronousCmds</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab972af3c26514d0b2474606edb08a0a3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classcrcl_1_1CCrcl2RosMsgApi.html">crcl::CCrcl2RosMsgApi</a> &gt; crcl::crclApi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a24e72169af3acc964852f08365cc798a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classcrcl_1_1CSocketSession.html">crcl::CSocketSession</a> &gt; crcl::crclCommServer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0604b7e64f711dfbb46c480cadb69c90"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string crcl::crclIp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a02814c72ebde9d5aaf6aa6f47176b331"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int crcl::crclPort</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aec2ddbfcf8c922408a168a542623c038"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classcrcl_1_1CRobotImpl.html">crcl::CRobotImpl</a> &gt; crcl::crclRobotImpl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab1c30380c59b46251d921551b43468f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int crcl::dbgCrclCommand</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af02a6e5fdde5aafcaa5a3ff5be68e837"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int crcl::dbgCrclCommandMsg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2439ccffebcafb6fff3d85f0519ae97c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int crcl::dbgCrclStatus</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1d5dfedda85315a35cf24cd352d4a255"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int crcl::dbgCrclStatusMsg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0049bfc90d7a970d0924ac872e59b7a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex crcl::mutex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0883d771bb00738c55364fcc0d03e5fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classcrcl_1_1CRosCmdMsgHandler.html">crcl::CRosCmdMsgHandler</a> &gt; crcl::rosCmdMsgHandler</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8fb92a07c671a64a06ccab87b1e054ac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classcrcl_1_1CRosCmdStatusHandler.html">crcl::CRosCmdStatusHandler</a> &gt; crcl::rosCmdStatMsgHandler</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>crcl socket server </p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
