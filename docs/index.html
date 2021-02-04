@@ -1,13 +1,15 @@
 <HTML>
 <BODY>
     <H1> CRCL2ROS API DOCUMENTATION </H1>
+
 To tackle the problem of agility performance across many robotic systems, the Canonical Robot Command Language (CRCL) was developed at the National Institute of Standards and Technology (NIST) as a robot communication standard. CRCL itself is an XML messaging specification that focuses on the domain of industrial robotics control as a special case of an overall ontology for automation.  For simulation, NIST has previously used CRCL to allow the APRS lab Java-based “aprs framework” software to communicate planning and control to the C++/Python based Gazebo robot kitting simulations as opposed to planning and control of the actual robots in the APRS kitting lab.  The previous CRCL to Gazebo simulation work relied on the gomotion robot motion planning tools while the new software tools relied exclusively on ROS, specifically moveit!, for robot motion planning. ROS is a popular open-source robotics environment supported by  a large community of users and developers who have adapted ROS to support a wide range of robots, sensors, and grippers.
 
 The initial focus of the CRCL to ROS/Gazebo work was to enable the use multi-agent robot planning computer languages to program one or more kitting robots using CRCL for command and control. Of note, the existing CRCL XML schema was extended to provide status describing kitting models (gears, trays, kits, etc.) as well as inferences about the kitting models (e.g., a gear located in a supply tray slot) to accommodate advanced reasoning.  The CRCL 2 ROS code has been made available publicly on github and can be found at https://github.com/usnistgov/crcl2ros. Depending on deployment, CRCL commands and status can be a simulated Gazebo kitting setup or use ROS for actual robot planning and control.
 
 
 <UL>
-    <LI><a href="../doxygen/html/index.html"> CRCL2ROS API Code Documentation</a></LI>
+    <LI><a href="./doxygen/html/index.html"> CRCL2ROS API Code Documentation</a></LI>
+</UL>
 
     <H1> CRCL XSD DOCUMENTATION </H1>
     CRCL is an XML robot language for communication
