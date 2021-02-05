@@ -4,6 +4,10 @@
 #define _USE_MATH_DEFINES
 #include <math.h>       /* isnan, sqrt */
 
+inline double lerp (double a, double b, double t)
+{
+    return a + t*(b - a);
+}
 
 struct S_Curve
 {

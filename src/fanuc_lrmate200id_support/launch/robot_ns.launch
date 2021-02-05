@@ -8,7 +8,8 @@
    <arg name="qtbreak" default="1"/>
    <arg name="robot" default="fanuc_lrmate200id"/>
    <arg name="output" default="screen"/>
-
+   <arg name="jnt_source_list" default="['/lrmate/joint_states']"/>
+ 
 
    <!-- args used in this roslaunch -->
    <arg name="fake_execution" default="true" />
@@ -95,7 +96,8 @@
  
       <node name="joint_state_publisher1" pkg="joint_state_publisher" type="joint_state_publisher">
          <param name="/use_gui" value="false" />
-         <rosparam param="source_list">["/lrmate/joint_states"]</rosparam>
+         <rosparam param="source_list" subst_value="True">$(arg jnt_source_list)</rosparam>
+        <!--<rosparam param="source_list">["/lrmate/joint_states"]</rosparam> -->
          <remap from="robot_description" to="robot_description" />
       </node>
       <node name="robot_state_publisher1" pkg="robot_state_publisher" type="state_publisher">

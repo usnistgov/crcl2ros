@@ -26,6 +26,7 @@
 #include "crclapp/Globals.h"
 #include "crclapp/CrclWm.h"
 #include "crclapp/RosMsgHandler.h"
+#include "crclapp/CrclRobotImpl.h"
 
 ros::NodeHandlePtr CRos::nh;
 CRos Ros;
@@ -61,17 +62,12 @@ int CRosCrclClient::action()
 ////////////////////////////////////////////////////////////////////////////////
 void CRosCrclClient::init()
 {
-#if 0
-#ifdef SERVER
-    _crclCmd = Ros.nh->subscribe(_prefix + "crcl_command", 10, &CRosCrclClient::cmdCallback, this);
-    _crclStatus = Ros.nh->advertise<crcl_rosmsgs::CrclStatusMsg>(_prefix + "crcl_status", 1);
-#else
-    _crclCmd = Ros.nh->advertise<crcl_rosmsgs::CrclCommandMsg>(_prefix + "crcl_command", 1);
-    _crclStatus = Ros.nh->subscribe(_prefix + "crcl_status", 10, &CRosCrclClient::statusCallback, this);
-#endif
-#endif
+
+    // this is a hard coded topic name  BUT SHOULD NOT BE
+    _guiJointStatePublisher = Ros.nh->subscribe("/lrmate/gui/joint_states", 1, &CRosCrclClient::guiJointStatesCallback,this);
+
 #ifdef GAZEBO
-    _crclWorldModel = Ros.nh->advertise<gazebo_msgs::ModelStates>(_prefix + "crcl_worldmodel", 1);
+    // this is a hard coded topic name from gazebo_ros_api plugin
     _gzWorldModel = Ros.nh->subscribe("/gazebo/model_states", 1, &CRosCrclClient::gzModelStatesCallback,this);
 #endif
     // This is never used...
@@ -81,86 +77,27 @@ void CRosCrclClient::init()
 ////////////////////////////////////////////////////////////////////////////////
 void CRosCrclClient::stop()
 {
-    Thread::stop(true);
-    _crclCmd.shutdown();
-    _crclStatus.shutdown();
+    _guiJointStatePublisher.shutdown();
 #ifdef GAZEBO
-    _crclWorldModel.shutdown();
     _gzWorldModel.shutdown();
 #endif
+    Thread::stop(true);
 }
 
-#ifdef SERVER
-////////////////////////////////////////////////////////////////////////////////
-void CRosCrclClient::cmdCallback(const crcl_rosmsgs::CrclCommandMsg::ConstPtr& cmdmsg)
+void CRosCrclClient::guiJointStatesCallback(const sensor_msgs::JointStateConstPtr jntupdate)
 {
-    crcl_rosmsgs::CrclCommandMsg cmd(*cmdmsg);
-
-    //   ROS_INFO("CController::CmdCallback");
-    // 4/11/2018 appears as if jointnum is not filled - do hack.
-
-    // Not sure how the joint names lined up?
-    cmd.jointnum.clear();
-
-    size_t j=0;
-
-    //
-    // check me:
-    //
-    for(size_t i=0; i< cmdmsg->jointnum.size(); i++)// i< _cnc->robotKinematics()->jointNames.size(); i++)
+    for(size_t i=0; i< jntupdate->name.size(); i++ )
     {
-        if(cmd.joints.name[j] == _input.jointNames[i])
-        {
-            cmd.jointnum.push_back(i);
-            j++;
-        }
+        std::cout << jntupdate->name[i] << ":";
+        moveit_msgs::RobotTrajectory traj;
+        std::vector<double> jnts=jntupdate->position;
+        traj=crcl::crclRobotImpl->moveJoints(jnts);
+        crcl::crclRobotImpl->move(traj);
+
     }
-
-    _cnc->crclcmds.addMsgQueue(cmd);
-}
-void CRosCrclClient::publishCrclStatus(crcl_rosmsgs::CrclStatusMsg &statusmsg)
-{
-    // If no one listening don't publish
-    if( _crclStatus.getNumSubscribers()==0)
-        return;
-
-    statusmsg.header.stamp = ros::Time::now();
-    _crclStatus.publish(statusmsg);
+    std::cout << "\n";
 }
 
-#endif
-#ifdef ROSMSG
-void CRosCrclClient::statusCallback(crcl_rosmsgs::CrclStatusMsg * statusmsg)
-{
-    // FIXME: this is a message topici callback from a rcs controller
-    // no longer a ros topic message
-    crcl_rosmsgs::CrclStatusMsg status(*statusmsg);
-
-    crcl2ros->statusUpdate(statusmsg);
-
-    // FIXME: no longer a google protobuf message
-//    if(Globals.DEBUG_Ros_Status)
-//         ROS_INFO_STREAM(status);
-
-}
-
-void CRosCrclClient::publishCrclCommand(crcl_rosmsgs::CrclCommandMsg &cmdmsg)
-{
-    // no longer a ROS google protobuf topic message for ROS to publish
-#if 0
-    // If no one listening don't publish
-    if( _crclCmd.getNumSubscribers()==0)
-        return;
-
-    cmdmsg.header.stamp = ros::Time::now();
-    _crclCmd.publish(cmdmsg);
-
-// FIXME: no longer a google protobuf message
-//    if(Globals.DEBUG_Ros_Command)
-//        ROS_INFO_STREAM(cmdmsg) ;
-#endif
-}
-#endif
 #ifdef GAZEBO
 void CRosCrclClient::gzModelStatesCallback(const gazebo_msgs::ModelStates &gzstate_current)
 {
@@ -206,13 +143,7 @@ void CRosCrclClient::gzModelStatesCallback(const gazebo_msgs::ModelStates &gzsta
         }
     }
 
-    // This forwards logical "vision" sensing to planning
-    // Message is untranslated from gazebo_ros_api
-    // If no one listening don't publish
-    if( _crclWorldModel.getNumSubscribers()>0)
-    {
-        _crclWorldModel.publish(gzstate_current);
-    }
+
 }
 
 void CRosCrclClient::reset()

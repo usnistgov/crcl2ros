@@ -44,8 +44,9 @@ def get_param(name, value=None):
 
 
 class JointStatePublisher():
-    def __init__(self):
-        description = get_param('robot_description')
+    def __init__(self,ns):
+        description = get_param(ns+'/robot_description')
+	#print('description=' + description)
         robot = xml.dom.minidom.parseString(description).getElementsByTagName('robot')[0]
         self.free_joints = {}
         self.joint_list = []  # for maintaining the original order of the joints
@@ -133,16 +134,20 @@ class JointStatePublisher():
         else:
             self.gui = None
 
-        source_list = get_param("source_list", [])
+	# if you want to echo the current state of the controller 
+	# the source list param 
+        source_list = get_param(ns+"/source_list", [])
         self.sources = []
         for source in source_list:
             self.sources.append(rospy.Subscriber(source, JointState, self.source_cb))
 
-        self.pub = rospy.Publisher('joint_states', JointState, queue_size=5)
+        self.pub = rospy.Publisher(ns+'/gui/joint_states', JointState, queue_size=5)
 
     def source_cb(self, msg):
+	print(msg)
         for i in range(len(msg.name)):
             name = msg.name[i]
+
             if name not in self.free_joints:
                 continue
 
@@ -167,23 +172,29 @@ class JointStatePublisher():
             if effort is not None:
                 joint['effort'] = effort
 
-        if self.gui is not None:
+            if self.gui is not None:
             # signal instead of directly calling the update_sliders method, to switch to the QThread
-            self.gui.sliderUpdateTrigger.emit()
+                self.gui.updateSliders()
+                #self.gui.sliderUpdateTrigger.emit()
+
+        # unregister sources, after reading initial positions
+        for s in self.sources:
+            s.unregister()
 
     def loop(self):
-        hz = get_param("rate", 10)  # 10hz
+        hz = get_param("rate", 10)  # 100hz
         r = rospy.Rate(hz)
 
         delta = get_param("delta", 0.0)
+	JointStatePublisher.positions=[]
 
         # Publish Joint States
         while not rospy.is_shutdown():
             msg = JointState()
             msg.header.stamp = rospy.Time.now()
 
-            if delta > 0:
-                self.update(delta)
+            #if delta > 0:
+            #    self.update(delta)
 
             # Initialize msg.position, msg.velocity, and msg.effort.
             has_position = len(self.dependent_joints.items()) > 0
@@ -243,29 +254,15 @@ class JointStatePublisher():
 
             if msg.name or msg.position or msg.velocity or msg.effort:
                 # Only publish non-empty messages
-                self.pub.publish(msg)
+                if(JointStatePublisher.positions!=msg.position):
+                    self.pub.publish(msg)
             try:
                 r.sleep()
             except rospy.exceptions.ROSTimeMovedBackwardsException:
                 pass
+            JointStatePublisher.positions=msg.position
 
-    def update(self, delta):
-        for name, joint in self.free_joints.iteritems():
-            forward = joint.get('forward', True)
-            if forward:
-                joint['position'] += delta
-                if joint['position'] > joint['max']:
-                    if joint.get('continuous', False):
-                        joint['position'] = joint['min']
-                    else:
-                        joint['position'] = joint['max']
-                        joint['forward'] = not forward
-            else:
-                joint['position'] -= delta
-                if joint['position'] < joint['min']:
-                    joint['position'] = joint['min']
-                    joint['forward'] = not forward
-
+ 
 
 class JointStatePublisherGui(QWidget):
     sliderUpdateTrigger = Signal()
@@ -313,7 +310,9 @@ class JointStatePublisherGui(QWidget):
             self.joint_map[name] = {'slidervalue': 0, 'display': display,
                                     'slider': slider, 'joint': joint}
             # Connect to the signal provided by QSignal
-            slider.valueChanged.connect(self.onValueChanged)
+            #slider.valueChanged.connect(self.onValueChanged)
+            slider.sliderReleased.connect(self.onSliderChanged)
+
             sliders.append(joint_layout)
 
         # Determine number of rows to be used in grid
@@ -355,6 +354,14 @@ class JointStatePublisherGui(QWidget):
 
     @pyqtSlot(int)
     def onValueChanged(self, event):
+        # A slider value was changed, but we need to change the joint_info metadata.
+        for name, joint_info in self.joint_map.items():
+            joint_info['slidervalue'] = joint_info['slider'].value()
+            joint = joint_info['joint']
+            joint['position'] = self.sliderToValue(joint_info['slidervalue'], joint)
+            joint_info['display'].setText("%.2f" % joint['position'])
+    @pyqtSlot(int)
+    def onSliderChanged(self):
         # A slider value was changed, but we need to change the joint_info metadata.
         for name, joint_info in self.joint_map.items():
             joint_info['slidervalue'] = joint_info['slider'].value()

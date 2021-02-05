@@ -366,10 +366,12 @@ moveit_msgs::RobotTrajectory CRobotImpl::moveJoints(std::vector<double> position
 {
     // FIXME: determine what joints names are actually moved assume all
     sensor_msgs::JointState jnts;
-    geometry_msgs::Pose p ;
+//    geometry_msgs::Pose p ;
+    moveit_msgs::RobotTrajectory trajectory;
 
     try
     {
+#if 0
         const moveit::core::RobotModelPtr& kinematic_model = _robotModelLoader.getModel();
         std::cout << Globals.format("Model frame: %s", kinematic_model->getModelFrame().c_str());
         moveit::core::RobotStatePtr kinematic_state(new moveit::core::RobotState(kinematic_model));
@@ -382,12 +384,45 @@ moveit_msgs::RobotTrajectory CRobotImpl::moveJoints(std::vector<double> position
         const std::vector< std::string > &links = _move_group->getLinkNames ();
         const Eigen::Affine3d& end_effector_state = kinematic_state->getGlobalLinkTransform(links.back());
         ::poseEigenToMsgImpl(end_effector_state,p);
+        //return moveTo(Convert<geometry_msgs::Pose, tf::Pose>(p));
+#else
+        trajectory.joint_trajectory.header.frame_id="/world";
+        trajectory.joint_trajectory.header.seq=0;
+        trajectory.joint_trajectory.header.stamp= ros::Time::now();
+        trajectory.joint_trajectory.joint_names =this->joint_names;
+
+        std::vector<double> jnts= currentJoints();
+
+        // Did not matter
+        for(double dIncrement=0.0; dIncrement<1.0; )
+        {
+            // Change from straight line to s curve
+            double t=S_Curve::scurve(dIncrement);
+
+            ::trajectory_msgs::JointTrajectoryPoint pt;
+            for(size_t i=0; i< jnts.size(); i++)
+                pt.positions.push_back(lerp(jnts[i], positions[i], t ));
+            // fixme: differentiate vel, acc values t-1, t-2
+            pt.accelerations={0.0,0.0,0.0,0.0,0.0,0.0,0.0};
+            pt.velocities={0.0,0.0,0.0,0.0,0.0,0.0,0.0};
+
+            // simple test to see if IK worked. Should get all joint positions
+            if(pt.positions.size() == trajectory.joint_trajectory.joint_names.size())
+                trajectory.joint_trajectory.points.push_back(pt);
+
+            dIncrement=dIncrement+0.1;
+
+        }
+        //move(trajectory);
+#endif
     }
     catch ( std::exception & e)
     {
         std::cerr << "crclimpl::moveJoints exception " << e.what();
     }
-    return moveTo(Convert<geometry_msgs::Pose, tf::Pose>(p));
+
+    return  trajectory;
+
 }
 std::string CRobotImpl::currentState()
 {

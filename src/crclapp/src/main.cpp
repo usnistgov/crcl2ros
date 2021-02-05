@@ -129,17 +129,6 @@ static void setup()
     crclRobotImpl=std::shared_ptr<crcl::CRobotImpl>(new crcl::CRobotImpl());
 
     crclRobotImpl->configure(CRos::nh.get(), Globals.ns);
-    // FIXME: this is hard coded...
-//    crclRobotImpl->nodeHandle(CRos::nh.get())
-//            .urdfRobotDescriptionRosParam(Globals.ns+"/robot_description")
-//            .moveGroupName(PLANNING_GROUP)
-//            .gzGripperTopic("/fanuc_lrmate200id/control")
-//            .jointStatePublisherTopic("/crcl/joint_states")
-//            .gzEnabled(gzEnable)
-//            .gzRobotModelName("lrmate")
-//            .init()
-//            .assertConfigurationValid();
-
     crclRobotImpl->init().assertConfigurationValid();
 
 }
@@ -284,20 +273,15 @@ int main(int argc, char** argv)
         std::string ros_loglevel=CRos::nh->param<std::string>(Globals.ns+"/debug/ros_loglevel", std::string{"Debug"});
         Ros.setupLogger(ros_loglevel);
 
-
-
         // read ROS params for configuration of demo and tests
         Globals.appConfig(CRos::nh);
-
 
         // Save ROS param server state
         Ros.parseRosLogPath(argv[0]);
         Ros.saveRosParam(*CRos::nh.get());
 
-
         // This configures, assigns instance pointers
         setup();
-
 
         // Kitting Demo setup
         geardemo=std::shared_ptr<CGearDemo>(new CGearDemo(crclApi));

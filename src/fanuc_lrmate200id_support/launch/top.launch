@@ -10,6 +10,7 @@
     <arg name="armgroup" value="fanucarm"/>
     <arg name="qtbreak" value="0"/>
     <arg name="robot" value="fanuc_lrmate200id"/>
+    <arg name="jnt_source_list" value="['/lrmate/joint_states']"/>
 
 </include>
 

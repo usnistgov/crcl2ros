@@ -46,10 +46,10 @@ from threading import Thread
 if __name__ == '__main__':
     try:
         rospy.init_node('py_joint_state_publisher')
-        rospy.set_param('/source_list', ['crcl2ros/joint_states'])
+        rospy.set_param('/lrmate/source_list', ['/lrmate/joint_states'])
         rospy.set_param('/use_gui','true')
 
-        jsp = JointStatePublisher()
+        jsp = JointStatePublisher('/lrmate')
 
         if jsp.gui is None:
             jsp.loop()

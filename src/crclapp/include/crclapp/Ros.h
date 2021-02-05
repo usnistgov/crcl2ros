@@ -57,41 +57,12 @@ public:
     //boost::shared_ptr<crcl::CServer> crcl2ros;  // decode ROS status into CRCL status
     RCS::CrclMessageQueue crcltopiccmds; /**< queue of commands interpreted from Crcl messages */
 
-#ifdef SERVER
-    /**
-     * @brief CmdCallback when a CRCL message arrives it uses
-     * this method as a callback
-     * to post the message to the CRCL message queue for the controller assigned to this class.
-     * @param cmdmsg
-     */
-    void cmdCallback(const crcl_rosmsgs::CrclCommandMsg::ConstPtr& cmdmsg);
-    /**
-     * @brief PublishCrclStatus
-     * @param statusmsg
-     */
-    void publishCrclStatus(crcl_rosmsgs::CrclStatusMsg &statusmsg);
+    ros::Subscriber _guiJointStatePublisher;
+    void guiJointStatesCallback(const sensor_msgs::JointStateConstPtr jntupdate);
 
-#endif
-#ifdef ROSMSG
-    /**
-     * @brief statusCallback when a CRCL status message arrives this method
-     * is the callback notification
-     * @param statusmsg currently crcl specific status
-     */
-    //void statusCallback(const crcl_rosmsgs::CrclStatusMsg::ConstPtr& statusmsg);
-    void statusCallback(crcl_rosmsgs::CrclStatusMsg* statusmsg);
-
-    /**
-     * @brief PublishCrclStatus
-     * @param statusmsg
-     */
-    void publishCrclCommand(crcl_rosmsgs::CrclCommandMsg &cmdmsg);
-
-#endif
 #ifdef GAZEBO
     void gzModelStatesCallback(const gazebo_msgs::ModelStates &gzstate_current);
     ros::Subscriber _gzWorldModel;
-    ros::Publisher _crclWorldModel;
     std::mutex _mymutex;
     void reset();
 
