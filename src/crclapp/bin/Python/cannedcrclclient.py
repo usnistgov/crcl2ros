@@ -1,4 +1,4 @@
-﻿import socket
+import socket
 import sys
 import math
 # from mathutils import Matrix

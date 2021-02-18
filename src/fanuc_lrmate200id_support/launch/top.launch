@@ -18,8 +18,11 @@
     <arg name="my_ns" value="r2" /> 
 </include> -->
 
+
+
 <include file="$(find fanuc_lrmate200id_support)/launch/gz.launch">
    <arg name="world_name" value="$(find fanuc_lrmate200id_support)/world/aprs-fanuc.world" />
+   <arg name="gzmodels" default="$(find gzdatabase)/models" />
 </include> 
 
 </launch>

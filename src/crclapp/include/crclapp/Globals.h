@@ -39,7 +39,7 @@
 #include <stdexcept>
 #include <string>
 #include <array>
-
+#include <numeric>.
 
 #ifndef DEBUG
 #include "boost/iostreams/stream.hpp"

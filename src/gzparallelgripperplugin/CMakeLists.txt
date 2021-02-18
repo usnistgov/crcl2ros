@@ -4,8 +4,7 @@ project(gzparallelgripperplugin)
 # copy library to gazebo plugin area - use env var for destination folder
 SET(CMAKE_INSTALL_PREFIX $ENV{GZPLUGINDIR} )
 message ( "gzparallelgripperplugin install at ${CMAKE_INSTALL_PREFIX}" )
-#SET(CMAKE_INSTALL_PREFIX "../plugins9") 
-
+#
 
 
 ## Find catkin macros and libraries

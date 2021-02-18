@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
    <arg name="world_name" default="$(find fanuc_lrmate200id_support)/world/aprs-fanuc.world" />
+   <arg name="gzmodels" default="$(find gzdatabase)/models" />
+<!--  <arg name="gzmodels" default="/home/nala/ros/crcl2ros/src/gzdatabase/models" />-->
 
    <arg name="debug" default="false" />
    <arg name="extra_gazebo_args" default="" />
@@ -31,8 +33,8 @@
    </group>
    <node name="gazebo" pkg="gazebo_ros" type="$(arg script_type)" respawn="$(arg respawn_gazebo)" output="screen" 
       args="$(arg command_arg1) $(arg command_arg2) $(arg command_arg3) -e $(arg physics) $(arg extra_gazebo_args) $(arg world_name)">
-      <env name="GAZEBO_PLUGIN_PATH" value="/home/michalos/ros/agility/devel/lib:$(optenv GAZEBO_PLUGIN_PATH)" />
-      <env name="GAZEBO_MODEL_PATH" value="/home/michalos/src/gzgwendolen/gzdatabase/models:$(optenv GAZEBO_MODEL_PATH)" />
+
+<env name="GAZEBO_MODEL_PATH" value="$(arg gzmodels):$(optenv GAZEBO_MODEL_PATH)" /> 
    </node>
    <!-- start gazebo client -->
    <group if="$(arg gui)">

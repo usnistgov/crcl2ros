@@ -1,4 +1,4 @@
-﻿
+
 import socket
 import sys 
 import math

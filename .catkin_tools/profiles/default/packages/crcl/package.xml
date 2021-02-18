@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="2">
+
+  <name>crcl</name>
+  <version>0.0.0</version>
+  <description>The fanuc_lrmate200id package</description>
+  <maintainer email="john.michaloski@nist.gov"></maintainer>
+  <license>TODO</license>
+
+  <exec_depend>fanuc_lrmate200id_support</exec_depend>
+  <buildtool_depend>catkin</buildtool_depend>
+	
+  <export>
+
+  </export>
+	
+</package>
+

@@ -1,39 +1,39 @@
 
-# <a name="GZRCS_Configuration"></a>GZRCS Configuration
+# <a name="GZRCS_Configuration"></a>GZRCS Configuration
 
 
 
-GZRCS Configuration.docx
+GZRCS Configuration.docx
 
 
-Configuration in the gzrcs application  is bundled under a separate folder "Config" with folder naming and organization as prescribed by ROS node layout: src, include/gzrcs and test as well as the config folder. 
+Configuration in the gzrcs application  is bundled under a separate folder "Config" with folder naming and organization as prescribed by ROS node layout: src, include/gzrcs and test as well as the config folder. 
 
 ![Figure1](./images/Configuration_image1.gif)
 
 <p align="center">
-_Figure 1 Folder Layout of gzrcs_
+_Figure 1 Folder Layout of gzrcs_
 </p>
 
 
-The config folder contains three important types of files.
-1. Config.ini file which contains variable assignments of the gzrcs options covered later.  Config.ini file contains the gzrcs configuration information.
-2. The config folder also contains a ROS Unified Robot Description Format (URDF) description of the robot.  The URDF description is used to determine the links, joints and parameterization of the robot (e.g., limits). The URDF is used by the abstract layer of the kinematic module for understanding the robot capabilities and limitations.
-3. A robot ini file is required by those robots that use the gokin kinematics FK/IK computation module.  For example, the motoman sia20d uses Gokin which requires its own ini file to specify the URDF parameters (instead of Denavit Hartenberg – DH) to configure the forward and inverse kinematics. Gokin solves for the joint angles by solving the linear least squares problem using the pseudo-inverse  of  the  Jacobian . This is done over a number of iterations until the solution converges. If the solution does not converge it is assumed the pose is singular. The gokin iterative approach uses the current robot position as a hint for seeking a convergent solution.    
-## <a name="Ini_File_Extensions"></a>Ini File Extensions
+The config folder contains three important types of files.
+1. Config.ini file which contains variable assignments of the gzrcs options covered later.  Config.ini file contains the gzrcs configuration information.
+2. The config folder also contains a ROS Unified Robot Description Format (URDF) description of the robot.  The URDF description is used to determine the links, joints and parameterization of the robot (e.g., limits). The URDF is used by the abstract layer of the kinematic module for understanding the robot capabilities and limitations.
+3. A robot ini file is required by those robots that use the gokin kinematics FK/IK computation module.  For example, the motoman sia20d uses Gokin which requires its own ini file to specify the URDF parameters (instead of Denavit Hartenberg – DH) to configure the forward and inverse kinematics. Gokin solves for the joint angles by solving the linear least squares problem using the pseudo-inverse  of  the  Jacobian . This is done over a number of iterations until the solution converges. If the solution does not converge it is assumed the pose is singular. The gokin iterative approach uses the current robot position as a hint for seeking a convergent solution.    
+## <a name="Ini_File_Extensions"></a>Ini File Extensions
 
 
 
-The discussed config file is ini format. However, it is not a strict ini compliance – there are no escape characters, by default sections and keys are case sensitive, duplicate keys are allowed, blank lines are allowed, and a few extensions are adopted. The ini format has the typical section and key/value pairs, where keys are assigned values with the equals sign (i.e., '=').   Even though the capability for all the sections and keys to be case insensitive, by default section and parameter names are case sensitive. Values are always case sensitive.
-### <a name="Ini_File_use_of_Comma_Separated_Values"></a> Ini File use of Comma Separated Values 
+The discussed config file is ini format. However, it is not a strict ini compliance – there are no escape characters, by default sections and keys are case sensitive, duplicate keys are allowed, blank lines are allowed, and a few extensions are adopted. The ini format has the typical section and key/value pairs, where keys are assigned values with the equals sign (i.e., '=').   Even though the capability for all the sections and keys to be case insensitive, by default section and parameter names are case sensitive. Values are always case sensitive.
+### <a name="Ini_File_use_of_Comma_Separated_Values"></a> Ini File use of Comma Separated Values 
 
 
 
-An ini file extension used is the adoption of comma separated values to signify multi-valued keys. Technically, this is not an extension, but internally the ini file code has the facility to read comma separated values (csv) and parse the values into a standard vector. Below is an example to specify the robot(s) and then enumerate options under the robot section key:
+An ini file extension used is the adoption of comma separated values to signify multi-valued keys. Technically, this is not an extension, but internally the ini file code has the facility to read comma separated values (csv) and parse the values into a standard vector. Below is an example to specify the robot(s) and then enumerate options under the robot section key:
 	[system]
 	robots=  motoman_,fanuc_
 
 
-And then the motoman_ section details all the options:
+And then the motoman_ section details all the options:
 	[motoman_]
 	longname=MotomanSia20d
 	prefix=motoman_
@@ -41,43 +41,43 @@ And then the motoman_ section details all the options:
 	. . . (more key/value pairs)
 
 
-Of note, although multiple robots are supported, it was deemed better to only support one robot per application, even though multiple robots and multiple grippers within the Config.ini file have been defined. In the case of multiple definitions, invoking the gzrcs application supports a command line option (i.e. -r) to select the robots parameterization and overrides the selection in the config.ini file. The invocation is shown below:
+Of note, although multiple robots are supported, it was deemed better to only support one robot per application, even though multiple robots and multiple grippers within the Config.ini file have been defined. In the case of multiple definitions, invoking the gzrcs application supports a command line option (i.e. -r) to select the robots parameterization and overrides the selection in the config.ini file. The invocation is shown below:
 	gzrcs -r motoman_
 
 
-Another use of the comma separated values is to define a list of values. Comma separated lists are used extensively to assign multiple values to one key. It is the onus of the programmer to know that a section key has multiple values. Such multi-value keys are used in the following manner:
-- define a pose (i.e., 7 values defined as xyz qx qy qz qw),  that are then translated into a ROS tf pose. Quaternion definition in the config.ini file have a leading 'q' to designate the definition of a quaternion. Below are some common transforms (for the base and retract pose transforms, as well as the quaternion for the robot arm bend to reach a gear on a table) in the config.ini file:
+Another use of the comma separated values is to define a list of values. Comma separated lists are used extensively to assign multiple values to one key. It is the onus of the programmer to know that a section key has multiple values. Such multi-value keys are used in the following manner:
+- define a pose (i.e., 7 values defined as xyz qx qy qz qw),  that are then translated into a ROS tf pose. Quaternion definition in the config.ini file have a leading 'q' to designate the definition of a quaternion. Below are some common transforms (for the base and retract pose transforms, as well as the quaternion for the robot arm bend to reach a gear on a table) in the config.ini file:
 	# Transforms
 	base= 0.0,0.0,.910,  0.0,0.0,0.0
 	retract=0.0,0.0,0.075,0.0,0.0,0.0
 	qbend=1.0,0.0,0.0,0.0
 
 
-It is important to note that transforms can be either 6 or 7 double elements long. By the size the corresponding representation of the tf pose can be determined. For vectors of length 6, the conversion to tf::Pose uses the RPY representation (i.e., roll, pitch, yaw angle rotations in radians). For vectors of length 7, the conversion to tf::Pose uses the Quaternion representation (i.e., qx, qy, qz, qw).
-- subbranch definition under current section so that each of these value names has a corresponding key typically to define a pose. Below shows a comma separated list to define the jointmovenames, and then the key/value list to define the 7 joint values for the named motoman joint move. This differs from the robot example earlier, in the csv key values are used as keys in the current section, and not as a separate section.
+It is important to note that transforms can be either 6 or 7 double elements long. By the size the corresponding representation of the tf pose can be determined. For vectors of length 6, the conversion to tf::Pose uses the RPY representation (i.e., roll, pitch, yaw angle rotations in radians). For vectors of length 7, the conversion to tf::Pose uses the Quaternion representation (i.e., qx, qy, qz, qw).
+- subbranch definition under current section so that each of these value names has a corresponding key typically to define a pose. Below shows a comma separated list to define the jointmovenames, and then the key/value list to define the 7 joint values for the named motoman joint move. This differs from the robot example earlier, in the csv key values are used as keys in the current section, and not as a separate section.
 	# Joint motions
 	jointmovenames = Safe,Home,NotHome
 	Safe= 1.30, .22, 0.08, 2.26, 3.12, -1.0, -1.28
 	Home= 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
 	NotHome=0.001,0.001,0.001,0.001,0.001,0.001,0.001
 
-- multi-value keys (e.g., finger joint names) for example
+- multi-value keys (e.g., finger joint names) for example
 	fingernames=robotiq_85_left_finger_tip_link,robotiq_85_right_finger_tip_link
-- assigning a section to a key (e.g., robot=motoman_) as discussed earlier.
+- assigning a section to a key (e.g., robot=motoman_) as discussed earlier.
 
 
-An especially important key list configuration ini use is for the definition of macros (or a series of commands that are executed). Below shows the homing macro, which instead of going to all zero joint positions corresponding to a kinematic singularity, goes to the "NotHome" named joint move defined previously.  Summarizing, the homing macro is shown below which resets the robot speeds and then moves to the non-singular joint position NotHome.
+An especially important key list configuration ini use is for the definition of macros (or a series of commands that are executed). Below shows the homing macro, which instead of going to all zero joint positions corresponding to a kinematic singularity, goes to the "NotHome" named joint move defined previously.  Summarizing, the homing macro is shown below which resets the robot speeds and then moves to the non-singular joint position NotHome.
 	# macros
 	macros=homing
 	homing=reset, goto NotHome
 
 
-****Important**:** This homing macro is called at the end of the gzrcs configuration and initialization sequence. If you do not move from the all zero joints, the kinematic IK will not work as it cannot handle a singularity.  Each of the macro commands (reset, goto) is defined in the Command Line interpreter.  The actually calling sequence is to internally call the command line interpreter with one command at a time.
-### <a name="Ini_File_use_of_Concatenation_of_Multi-value_key_values"></a> Ini File use of Concatenation of Multi-value key values
+****Important**:** This homing macro is called at the end of the gzrcs configuration and initialization sequence. If you do not move from the all zero joints, the kinematic IK will not work as it cannot handle a singularity.  Each of the macro commands (reset, goto) is defined in the Command Line interpreter.  The actually calling sequence is to internally call the command line interpreter with one command at a time.
+### <a name="Ini_File_use_of_Concatenation_of_Multi-value_key_values"></a> Ini File use of Concatenation of Multi-value key values
 
 
 
-Another ini extension is the use of key values that can be a concatenation of comma separated values by using the plus equal sign (i.e., '+=') to signify do not overwrite, but append the new value to the end of the key value.  Below is an example of   the += operator to build a vector of all the part names. Note, that each line ends with a comma (i.e., ',') because all the gear names are appended to the value, and the value is then turned into a multi-value std vector. S in effect the += operator is merely a convenience operator to simplify building of large or length values.
+Another ini extension is the use of key values that can be a concatenation of comma separated values by using the plus equal sign (i.e., '+=') to signify do not overwrite, but append the new value to the end of the key value.  Below is an example of   the += operator to build a vector of all the part names. Note, that each line ends with a comma (i.e., ',') because all the gear names are appended to the value, and the value is then turned into a multi-value std vector. S in effect the += operator is merely a convenience operator to simplify building of large or length values.
 	# gearing enumeration of part for testing
 	parts=sku_kit_s2l2_vessel3,sku_kit_s2l2_vessel4,
 	parts+=sku_large_gear_vessel1,sku_large_gear_vessel2,
@@ -85,30 +85,30 @@ Another ini extension is the use of key values that can be a concatenation of co
 	parts+=sku_part_small_gear9,sku_part_small_gear10,sku_part_small_gear11,sku_part_small_gear12
 
 
-It is assumed ini format is sufficient, although many prefer a tree style as embodied by YAML. This assertion is incorrect as sections and keys can be formed into tree branches using periods. Finding all the configuration parameters in one file, no matter how large is preferable as text search has been around since after punch cards.
+It is assumed ini format is sufficient, although many prefer a tree style as embodied by YAML. This assertion is incorrect as sections and keys can be formed into tree branches using periods. Finding all the configuration parameters in one file, no matter how large is preferable as text search has been around since after punch cards.
 
 
-Of note, the homing macro defined in the previous section is defined using the concatenation operator, so that additional commands could be appended if required (e.g., gripper open).
+Of note, the homing macro defined in the previous section is defined using the concatenation operator, so that additional commands could be appended if required (e.g., gripper open).
 	# macros
 	macros=homing
 	homing=reset, 
 	homing+=goto NotHome
 
 
-
-## <a name="Ini_File_Parameterization_Description"></a>Ini File Parameterization Description
+
+## <a name="Ini_File_Parameterization_Description"></a>Ini File Parameterization Description
 
 
 
-The ini file is the centralized file for describing the gzrcs options. So, the ini file can contain multiple robots, multiple grippers and then the user can pick and choose among the options. There is no smart GUI for configurating the ini file.  
-### <a name="Configuration_File_Location"></a> Configuration File Location
+The ini file is the centralized file for describing the gzrcs options. So, the ini file can contain multiple robots, multiple grippers and then the user can pick and choose among the options. There is no smart GUI for configurating the ini file.  
+### <a name="Configuration_File_Location"></a> Configuration File Location
 
 
 
-The Config folder is copied into the executable folder for both QT implementation and ROS implementation.  This makes configuration file lookup easy, however, installation must be explicit in QT and tricky in ROS catkin_make.
+The Config folder is copied into the executable folder for both QT implementation and ROS implementation.  This makes configuration file lookup easy, however, installation must be explicit in QT and tricky in ROS catkin_make.
 
 
-If using QT and qmake, the project file can be programmed to copy the config elements into the executable folder by adding a make install step to the project step. Then the contents of the config folder that are required are copied to the execution folder using the pat/files qmake convention. 
+If using QT and qmake, the project file can be programmed to copy the config elements into the executable folder by adding a make install step to the project step. Then the contents of the config folder that are required are copied to the execution folder using the pat/files qmake convention. 
 	config_features.path     = "$$OUT_PWD/$$DESTDIR/config"
 	config_features.files     = $$PWD/config/Config.ini \
 	   $$PWD/config/MotomanSia20d.urdf\
@@ -117,13 +117,13 @@ If using QT and qmake, the project file can be programmed to copy the config ele
 	INSTALLS                  += config_features
 
 
-
 
 
-Of note, the motoman sia20d uses Gokin which requires its own ini file to configure the forward and inverse kinmetics, and is copied over with this line: $$PWD/config/motoman_sia20d.ini  The urdf files are parse by the kinemtics module, and the Config.ini file contains the gzrcs configuration information.
+
+Of note, the motoman sia20d uses Gokin which requires its own ini file to configure the forward and inverse kinmetics, and is copied over with this line: $$PWD/config/motoman_sia20d.ini  The urdf files are parse by the kinemtics module, and the Config.ini file contains the gzrcs configuration information.
 
 
-In ROS using catkin_make a separate custom step is required using CMake to achieve the copy. The catkin_make steps copy to both the ROS install and development executable directories.
+In ROS using catkin_make a separate custom step is required using CMake to achieve the copy. The catkin_make steps copy to both the ROS install and development executable directories.
 	# Gives the config folder files of interest a variable name
 	set(CONFIG_SOURCES
 	  ${CMAKE_CURRENT_SOURCE_DIR}/config/Config.ini
@@ -151,27 +151,27 @@ In ROS using catkin_make a separate custom step is required using CMake to achie
 	                   )             
 
 
-                   
-
-
-
-### <a name="Ini_Section_Variables"></a> Ini Section Variables
+                   
 
 
 
-Repeating, it is important to note that ini file transforms can be described using either 6 or 7 double csv  elements. Internally, using the configured csv size the corresponding representation of the tf pose can be determined. For csvof length 6, the conversion to tf::Pose uses the RPY representation (i.e., roll, pitch, yaw angle rotations in radians). For csv of length 7, the conversion to tf::Pose uses the Quaternion representation (i.e., qx, qy, qz, qw).
+### <a name="Ini_Section_Variables"></a> Ini Section Variables
 
 
-The following tables describe the ini file configuration for the gzrcs application for the robot simulation. 
+
+Repeating, it is important to note that ini file transforms can be described using either 6 or 7 double csv  elements. Internally, using the configured csv size the corresponding representation of the tf pose can be determined. For csvof length 6, the conversion to tf::Pose uses the RPY representation (i.e., roll, pitch, yaw angle rotations in radians). For csv of length 7, the conversion to tf::Pose uses the Quaternion representation (i.e., qx, qy, qz, qw).
 
 
-The [system] section within the Config.ini file describes global parameters for general robot control and for integration testing with gazebo (CannedDemo).  Due to the erratic behavior of Gazebo grasping there are numerous parameters and grasping strategies –
-- dwell time after grasping operation required for one gazebo plugin, 
-- flag indicating whether force control is applied during gripping,
-- flag indicating whether smart gripper closing is used to center grasp while closing.  
+The following tables describe the ini file configuration for the gzrcs application for the robot simulation. 
 
 
-
+The [system] section within the Config.ini file describes global parameters for general robot control and for integration testing with gazebo (CannedDemo).  Due to the erratic behavior of Gazebo grasping there are numerous parameters and grasping strategies –
+- dwell time after grasping operation required for one gazebo plugin, 
+- flag indicating whether force control is applied during gripping,
+- flag indicating whether smart gripper closing is used to center grasp while closing.  
+
+
+
 <TABLE>
 <TR>
 <TD>[system]<BR></TD>
@@ -227,10 +227,10 @@ The [system] section within the Config.ini file describes global parameters for 
 </TABLE>
 
 
-
 
 
-The demo section describes some parameter to assist in the CannedDemo or within the DemoAPI for such operations as finding next free gear or open slot.
+
+The demo section describes some parameter to assist in the CannedDemo or within the DemoAPI for such operations as finding next free gear or open slot.
 <TABLE>
 <TR>
 <TD>[demo]<BR></TD>
@@ -270,13 +270,13 @@ The demo section describes some parameter to assist in the CannedDemo or within 
 </TABLE>
 
 
- 
+ 
 
 
-
 
 
-There is the description of the[debug]section in the Config.ini file. The [debug] section describes parameters for debugging and logging configuration.
+
+There is the description of the[debug]section in the Config.ini file. The [debug] section describes parameters for debugging and logging configuration.
 <TABLE>
 <TR>
 <TD>[debug]<BR></TD>
@@ -332,10 +332,10 @@ There is the description of the[debug]section in the Config.ini file. The [debug
 </TABLE>
 
 
-
 
 
-
+
+
 <TABLE>
 <TR>
 <TD>[CRCL]<BR></TD>
@@ -383,7 +383,7 @@ There is the description of the[debug]section in the Config.ini file. The [debug
 </TABLE>
 
 
-The gazebo related configuration parameters.
+The gazebo related configuration parameters.
 <TABLE>
 <TR>
 <TD>[gazebo]<BR></TD>
@@ -461,13 +461,13 @@ The gazebo related configuration parameters.
 </TABLE>
 
 
-
 
 
-
 
 
-Next comes the robot specification given as the name assigned as the value to [system] robots parameter. Each robot instance should define the following parameters (or use the default assigned internal to the executing program.) Note that the section name includes the underscore.
+
+
+Next comes the robot specification given as the name assigned as the value to [system] robots parameter. Each robot instance should define the following parameters (or use the default assigned internal to the executing program.) Note that the section name includes the underscore.
 <TABLE>
 <TR>
 <TD>[motoman_]<BR></TD>
@@ -591,13 +591,13 @@ Next comes the robot specification given as the name assigned as the value to [s
 </TABLE>
 
 
-
 
 
-
 
 
-There are sections for the various grippers used. The following is based on the  Motoman gripper in agility lab. It was developed by Peter Mnev 
+
+
+There are sections for the various grippers used. The following is based on the  Motoman gripper in agility lab. It was developed by Peter Mnev 
 <TABLE>
 <TR>
 <TD>[gripper parameters]<BR></TD>
